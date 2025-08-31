@@ -1,0 +1,188 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "81929cdc-f9fd-4c47-8b7e-bc8597104756")
+	(paper "A4")
+	(title_block
+		(title "16-in, 16-out USB <-> ADAT interface")
+		(rev "1.0a")
+		(company "Rethera")
+		(comment 1 "Drawn by Łukasz Świszcz")
+	)
+	(lib_symbols)
+	(sheet
+		(at 134.62 100.33)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 227 161 1.0000)
+		)
+		(uuid "48ac3253-1f5d-4e9f-aed5-ac922c87d2ee")
+		(property "Sheetname" "IO"
+			(at 134.62 99.6184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "io.kicad_sch"
+			(at 134.62 113.6146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "adatv2"
+				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 134.62 62.23)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 227 161 1.0000)
+		)
+		(uuid "60796416-9670-44ee-b184-e89641e8a32b")
+		(property "Sheetname" "Power Supply"
+			(at 134.62 61.5184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power_supply.kicad_sch"
+			(at 134.62 75.5146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "adatv2"
+				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 134.62 120.65)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 227 161 1.0000)
+		)
+		(uuid "9bc7ef03-1440-4b25-9006-2e198f2c786c")
+		(property "Sheetname" "Display board"
+			(at 134.62 119.9384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "display_board.kicad_sch"
+			(at 134.62 133.9346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "adatv2"
+				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 134.62 81.28)
+		(size 12.7 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 227 161 1.0000)
+		)
+		(uuid "cefd53d3-c673-4ebe-b3bb-368fd3bd11c0")
+		(property "Sheetname" "MCU, USB and FPGA config"
+			(at 134.62 80.5684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "main_board.kicad_sch"
+			(at 134.62 94.5646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "adatv2"
+				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
