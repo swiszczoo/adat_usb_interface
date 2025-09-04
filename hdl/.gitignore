@@ -4,3 +4,6 @@ db
 !.gitignore
 incremental_db
 output_files
+simulation
+main_nativelink_simulation.rpt
+rtl_work
