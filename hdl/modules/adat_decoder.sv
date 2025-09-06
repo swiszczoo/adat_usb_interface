@@ -168,6 +168,7 @@ module adat_decoder #(
                     end
                 end // StDecodingSamples
                 StCommit: begin
+                    decoder_state_next = StWaitForAdatSync;
                     addr_hi_next = addr_hi_r + 'd1;
                     last_good_frame_idx_next = addr_hi_r;
                     user_bits_q_next = user_bits_r;
