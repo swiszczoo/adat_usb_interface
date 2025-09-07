@@ -13,7 +13,7 @@ module adat_decoder #(
     output                                  ram_write_data_o,
     output [CIRC_BUF_BITS-1:0]              last_good_frame_idx_o,
     output [3:0]                            user_bits_o,
-    output                                  has_sync
+    output                                  has_sync_o
 );
     typedef enum bit[2:0] {
         // Initial state
@@ -97,7 +97,7 @@ module adat_decoder #(
     wire first_in_nibble = nibble_counter_r == 'd0;
 
     // This equals zero only if the first bit of a fifth is not a one
-    wire valid_adat_bit = !(nibble_counter_r[0] == 'd0 && !adat_bit) && adat_valid;
+    wire valid_adat_bit = !(nibble_counter_r == 'd0 && !adat_bit) && adat_valid;
 
     // This equals one if this is the fifth bit of a single nibble
     wire full_nibble = nibble_counter_r >= 'd4;
@@ -211,5 +211,5 @@ module adat_decoder #(
     assign ram_write_data_o = write_data_r;
     assign last_good_frame_idx_o = last_good_frame_idx_r;
     assign user_bits_o = user_bits_qr;
-    assign has_sync = has_sync_r;
+    assign has_sync_o = has_sync_r;
 endmodule

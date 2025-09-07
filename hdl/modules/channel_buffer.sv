@@ -16,7 +16,9 @@ module simple_dual_port_ram_single_clock
 
     // This should be synthesizable
     initial begin
-        ram = '0;
+        for (int i = 0; i < 2**ADDR_WIDTH; i++) begin
+            ram[i] = '0;
+        end
     end
 
     always @ (posedge clk) begin
@@ -35,12 +37,12 @@ endmodule
 
 // Circular buffer for one ADAT channel (8 audio channels)
 module channel_buffer (
-    input write_data_i,
-    input read_addr_i,
-    input write_addr_i,
-    input wr_en_i,
-    input clk_i,
-    output read_data_o
+    input               write_data_i,
+    input [10:0]        read_addr_i,
+    input [10:0]        write_addr_i,
+    input               wr_en_i,
+    input               clk_i,
+    output              read_data_o
 );
     simple_dual_port_ram_single_clock #(
         .DATA_WIDTH    (1),         // We access single bit at once

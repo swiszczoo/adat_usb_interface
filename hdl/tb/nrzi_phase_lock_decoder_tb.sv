@@ -1,4 +1,5 @@
 `include "../modules/nrzi_phase_lock_decoder.sv"
+`include "jitter_generator.sv"
 
 `timescale 10ns / 1ns
 module nrzi_phase_lock_decoder_tb(
@@ -16,7 +17,7 @@ module nrzi_phase_lock_decoder_tb(
     var bit nrzi_state_r = '0;
     var bit clk_state_r = '0;
     var bit [15:0] write_pos_r = '0;
-    const int jitter_amount = 2000;
+    const real jitter_amount = 2.0;
 
     wire logic output_data;
     wire logic output_valid;
@@ -34,11 +35,8 @@ module nrzi_phase_lock_decoder_tb(
     assign nrzi_state_o = nrzi_state_r;
     assign clk_x4_o = clk_state_r;
 
-    real initial_delay;
-    real next_bit_time;
-    real clock_jitter;
-    real actual_next_bit_time;
     bit data_in;
+    jitter_generator jitter_gen = new ();
 
     initial begin
         for (int i = 0; i < 512; i++) begin
@@ -48,11 +46,7 @@ module nrzi_phase_lock_decoder_tb(
         data_tx_r[0] = '1;
         in_bit_o = '0;
 
-        initial_delay = real'($urandom() % 10000) / 1000.0;
-        #(initial_delay);
-
-        next_bit_time = initial_delay;
-
+        jitter_gen.initialize ();
         for (int i = 0; i < 560; i++) begin
             data_in = data_tx_r[i];
             in_bit_o = data_in;
@@ -60,11 +54,7 @@ module nrzi_phase_lock_decoder_tb(
                 nrzi_state_r = !nrzi_state_r;
             end
 
-            next_bit_time = next_bit_time + 8.0;
-            clock_jitter = real'($urandom() % jitter_amount) / 1000.0;
-            actual_next_bit_time = next_bit_time - clock_jitter;
-
-            #(actual_next_bit_time - $realtime);
+            jitter_gen.jitter(jitter_amount);
         end
 
         #20;
