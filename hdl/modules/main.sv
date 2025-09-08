@@ -3,6 +3,8 @@ module main (
     input           clk_48000_i,    // 24.5760MHz xtal out
     input           adat_in_1_i,    // channels 1-8 IN
     input           adat_in_2_i,    // channels 9-16 IN
+    input [ 3:0]    adat_1_user_i,
+    input [ 3:0]    adat_2_user_i,
     input           mcu_ready_i,
     input           fs_sel_i,       // 0 - 48 kHz, 1 - 44.1 kHz
     input           i2s_resync_req_i,
