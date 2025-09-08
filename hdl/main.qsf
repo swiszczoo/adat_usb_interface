@@ -86,6 +86,7 @@ set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 3
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 5
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 6
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 8
+set_global_assignment -name SYSTEMVERILOG_FILE modules/simple_dual_port_ram_single_clock.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/nrzi_phase_lock_decoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/channel_buffer.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/adat_decoder.sv

@@ -57,14 +57,14 @@ module nrzi_phase_lock_decoder_tb(
             jitter_gen.jitter(jitter_amount);
         end
 
-        #20;
+        #128;
 
         $display("Input data: %b", data_tx_r);
         $display("Captured output data: %b", data_rx_r);
 
         data_tx_r[0] = 'b0; // the first sync transition will be missing in the output
 
-        repeat (16) begin
+        repeat (64) begin
             data_rx_r = data_rx_r >> 1;
 
             if (data_rx_r == data_tx_r) begin

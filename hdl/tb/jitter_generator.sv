@@ -13,11 +13,13 @@ class jitter_generator;
 
     task automatic jitter(real jitter);
         real clock_jitter;
+        real sine_jitter;
         real actual_next_bit_time;
 
         this.next_bit_time = this.next_bit_time + 8.0;
         clock_jitter = real'($urandom() % int'(jitter * 1000)) / 1000.0;
-        actual_next_bit_time = next_bit_time - clock_jitter;
+        sine_jitter = $sin($realtime / 1000.0) * jitter * 4.0;
+        actual_next_bit_time = next_bit_time - clock_jitter + sine_jitter;
 
         #(actual_next_bit_time - $realtime);
     endtask

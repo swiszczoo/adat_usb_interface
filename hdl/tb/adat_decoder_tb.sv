@@ -32,13 +32,16 @@ module adat_decoder_tb (
         .has_sync_o                 (has_sync_o)
     );
 
+    var bit [10:0] ram_read_addr = '0;
+    bit ram_data;
+
     channel_buffer u_channel_buffer (
         .write_data_i               (ram_write_data_o),
-        .read_addr_i                (),
+        .read_addr_i                (ram_read_addr),
         .write_addr_i               (ram_write_addr_o),
         .wr_en_i                    (ram_write_en_o),
         .clk_i                      (clk_state_r),
-        .read_data_o                ()
+        .read_data_o                (ram_data)
     );
 
     var bit [2047:0] adat_in;
@@ -69,8 +72,13 @@ module adat_decoder_tb (
 
     // Test process
     jitter_generator gen = new();
+    bit ok = 1'b1;
 
     initial begin
+        for (int i = 0; i < 2048; i++) begin
+            u_channel_buffer.u_simple_dual_port_ram_single_clock.ram[i] = 'b0;
+        end
+
         gen.initialize();
 
         for (int i = 0; i < 2048; i++) begin
@@ -81,6 +89,24 @@ module adat_decoder_tb (
             end else begin
                 gen.jitter(real'(150 - i) / 20.0 + 1.0);
             end
+        end
+
+        #256;
+
+        // skip first adat frame
+        i2s_out = i2s_out << 256;
+
+        for (int i = 0; i < 2048; i++) begin
+            if (i2s_out[2047 - i] != ram_data) ok = 1'b0;
+
+            ram_read_addr = ram_read_addr + 1'b1;
+            #2;
+        end
+
+        if (ok) begin
+            $display("Everything is ok!");
+        end else begin
+            $display("Something is wrong!");
         end
 
         $stop;

@@ -11,6 +11,13 @@ add wave -position insertpoint  \
     sim:/nrzi_phase_lock_decoder_tb/sync_o \
     sim:/nrzi_phase_lock_decoder_tb/u_nrzi_phase_lock_decoder/current_read_pos_r \
     sim:/nrzi_phase_lock_decoder_tb/u_nrzi_phase_lock_decoder/decoder_state \
-    sim:/nrzi_phase_lock_decoder_tb/u_nrzi_phase_lock_decoder/current_zeros_count_r
+    sim:/nrzi_phase_lock_decoder_tb/u_nrzi_phase_lock_decoder/current_zeros_count_r \
+    sim:/nrzi_phase_lock_decoder_tb/u_nrzi_phase_lock_decoder/read_addr_r \
+    sim:/nrzi_phase_lock_decoder_tb/u_nrzi_phase_lock_decoder/ram_q \
+    sim:/nrzi_phase_lock_decoder_tb/u_nrzi_phase_lock_decoder/write_addr_r \
+    sim:/nrzi_phase_lock_decoder_tb/u_nrzi_phase_lock_decoder/write_data_r \
+    sim:/nrzi_phase_lock_decoder_tb/u_nrzi_phase_lock_decoder/symbol_history_shift_r \
+    sim:/nrzi_phase_lock_decoder_tb/u_nrzi_phase_lock_decoder/current_read_window_q \
+    sim:/nrzi_phase_lock_decoder_tb/u_nrzi_phase_lock_decoder/current_read_window_qr
 
 run -all
