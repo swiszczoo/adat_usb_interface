@@ -27,8 +27,10 @@ module i2s_msb_transmitter #(
     var bit [2:0] missed_frames_r = '0;
     logic [2:0] missed_frames_next;
 
-    logic soon_next_frame = read_addr_lo_r == 8'hff;
-    logic new_frame_available = last_good_frame_idx_i != read_frame_r;
+    var bit ram_data_q = '0;
+
+    wire soon_next_frame = (read_addr_lo_r == 8'hff);
+    wire new_frame_available = (last_good_frame_idx_i != read_frame_r);
 
     output_state_e output_state = StOutputNothing;
     output_state_e output_state_next;
@@ -46,9 +48,10 @@ module i2s_msb_transmitter #(
         output_state_next = output_state;
         read_frame_next = read_frame_r;
         missed_frames_next = missed_frames_r;
+        read_addr_lo_next = read_addr_lo_r + 8'b1;
 
         if (resync_req_i) begin
-            unique case (output_state);
+            unique case (output_state)
                 StOutputNothing: begin
                     if (soon_next_frame) begin
                         if (new_frame_available) begin
@@ -92,7 +95,9 @@ module i2s_msb_transmitter #(
             read_frame_r <= read_frame_next;
             read_addr_lo_r <= read_addr_lo_next;
             missed_frames_r <= missed_frames_next;
-            output_state = output_state_next;
+            output_state <= output_state_next;
+
+            ram_data_q <= ram_data_i;
         end
     end
 
@@ -101,14 +106,14 @@ module i2s_msb_transmitter #(
     assign ram_read_addr_o[CIRC_BUF_BITS-1+8:8] = read_frame_next;
     assign ram_read_addr_o[7:0] = read_addr_lo_next;
     assign i2s_running_o = !no_output;
-    assign i2s_bclk_o = no_output ? 1'b0 : !clk_counter_r[0];
-    assign i2s_lrclk_o = no_output ? 1'b0 : read_addr_lo_r[5]; // changes every 32 bits
+    assign i2s_bclk_o = no_output ? 1'b1 : !clk_counter_r[1];
+    assign i2s_lrclk_o = no_output ? 1'b0 : !read_addr_lo_r[5]; // changes every 32 bits
 
     always_comb begin
-        unique case (output_state);
+        unique case (output_state)
             StOutputNothing: i2s_data_ro = 1'b0;
             StOutputZeros: i2s_data_ro = 1'b0;
-            StOutputData: i2s_data_ro = ram_data_i;
+            StOutputData: i2s_data_ro = ram_data_q;
             default: i2s_data_ro = 1'b0;
         endcase
     end
