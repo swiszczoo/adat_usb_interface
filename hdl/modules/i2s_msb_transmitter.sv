@@ -80,6 +80,7 @@ module i2s_msb_transmitter #(
                         end
                     end
                 end
+                default: output_state_next = StOutputNothing;
             endcase
         end else begin
             output_state_next = StOutputNothing;
@@ -90,6 +91,7 @@ module i2s_msb_transmitter #(
         if (!clk_main_tick_nr) begin
             read_frame_r <= read_frame_next;
             read_addr_lo_r <= read_addr_lo_next;
+            missed_frames_r <= missed_frames_next;
             output_state = output_state_next;
         end
     end
