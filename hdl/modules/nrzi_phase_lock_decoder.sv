@@ -27,15 +27,15 @@ module nrzi_phase_lock_decoder (
     // Clock divider submodule (div/4)
     var bit [1:0] clk_div_r = 'b00;
     wire clk_main_tick_next = clk_div_r[1] | clk_div_r[0];
-    var bit clk_main_tick_r;
+    var bit clk_main_tick_nr;
 
     always_ff @(posedge clk_x4_i) begin
         clk_div_r <= clk_div_r + 'b01;
-        clk_main_tick_r <= clk_main_tick_next;
+        clk_main_tick_nr <= clk_main_tick_next;
     end
 
     assign clk_o = !clk_div_r[1];
-    assign clk_main_tick_no = clk_main_tick_r;
+    assign clk_main_tick_no = clk_main_tick_nr;
 
     // Decoder
     decoder_state_e decoder_state = StIdle;
