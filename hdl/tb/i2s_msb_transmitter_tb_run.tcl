@@ -1,4 +1,4 @@
-vlog +acc=npr ../../tb/i2s_msb_transmitter_tb.sv
+vlog +acc=npr ../../tb/i2s_msb_transmitter_tb.sv ../../modules/simple_dual_port_ram_single_clock.sv
 vsim -sv_seed random i2s_msb_transmitter_tb
 add wave -position insertpoint  \
     sim:/i2s_msb_transmitter_tb/clk_x4_o \

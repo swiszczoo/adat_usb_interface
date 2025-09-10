@@ -22,7 +22,7 @@ module i2s_msb_transmitter #(
     logic [CIRC_BUF_BITS-1:0] read_frame_next;
 
     var bit [7:0] read_addr_lo_r = '0;
-    logic [7:0] read_addr_lo_next = read_addr_lo_r + 8'b1;
+    logic [7:0] read_addr_lo_next;
 
     var bit [2:0] missed_frames_r = '0;
     logic [2:0] missed_frames_next;

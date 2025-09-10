@@ -86,12 +86,14 @@ set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 3
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 5
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 6
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 8
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE modules/i2s_msb_transmitter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modules/i2s_msb_receiver.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/simple_dual_port_ram_single_clock.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/nrzi_phase_lock_decoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/channel_buffer.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/adat_decoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/main.sv
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

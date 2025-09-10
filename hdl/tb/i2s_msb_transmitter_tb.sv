@@ -1,6 +1,7 @@
 `include "../modules/channel_buffer.sv"
 `include "../modules/i2s_msb_transmitter.sv"
 
+`timescale 10ns / 1ns
 module i2s_msb_transmitter_tb (
     output                          clk_x4_o,
     output                          ram_data_o,
@@ -67,7 +68,7 @@ module i2s_msb_transmitter_tb (
         end
     end
 
-    // RAM filling process
+    // Main process
     initial begin
         #50;
 

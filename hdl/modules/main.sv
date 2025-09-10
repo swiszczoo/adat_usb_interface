@@ -9,10 +9,18 @@ module main (
     input           fs_sel_i,       // 0 - 48 kHz, 1 - 44.1 kHz
     input           i2s_resync_req_i,
     input           loopback_i,
+    input           i2s_1_data_i,
+    input           i2s_2_data_i,
 
     output          sel_clk_o,
     output          word_clk_o,
     output          pll_locked_o,
+    output          i2s_1_data_o,
+    output          i2s_1_bclk_o,
+    output          i2s_1_lrclk_o,
+    output          i2s_2_data_o,
+    output          i2s_2_bclk_o,
+    output          i2s_2_lrclk_o,
     output          adat_out_1_o,   // channels 1-8 OUT
     output          adat_out_2_o,   // channels 9-16 OUT
     output          i2s_running_o,

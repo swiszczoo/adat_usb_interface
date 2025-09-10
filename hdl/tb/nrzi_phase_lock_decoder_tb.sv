@@ -62,10 +62,13 @@ module nrzi_phase_lock_decoder_tb(
         $display("Input data: %b", data_tx_r);
         $display("Captured output data: %b", data_rx_r);
 
-        data_tx_r[0] = 'b0; // the first sync transition will be missing in the output
+        // the first sync transition will be missing in the output
+        // and we can give the module a bit of room to synchronize
+        data_tx_r[3:0] = 4'b0000;
 
         repeat (64) begin
-            data_rx_r = data_rx_r >> 1;
+            data_rx_r = data_rx_r >> 1; 
+            data_rx_r[3:0] = 4'b0000;
 
             if (data_rx_r == data_tx_r) begin
                 $display("Data received correctly, yay!");
