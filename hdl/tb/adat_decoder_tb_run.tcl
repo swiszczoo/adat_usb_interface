@@ -1,4 +1,4 @@
-vlog +acc=npr ../../tb/adat_decoder_tb.sv ../../modules/nrzi_phase_lock_decoder.sv
+vlog +acc=npr ../../tb/adat_decoder_tb.sv ../../modules/simple_dual_port_ram_single_clock.sv +define+SIMULATION
 vsim -sv_seed random adat_decoder_tb
 add wave -position insertpoint  \
     sim:/adat_decoder_tb/adat_in_o \

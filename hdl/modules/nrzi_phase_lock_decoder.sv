@@ -86,6 +86,8 @@ module nrzi_phase_lock_decoder (
     end
 
     var bit [3:0] symbol_history_shift_r = 4'b0;
+    var bit nrzi_q = '0;
+    var bit nrzi_q2 = '0;
     always_ff @(posedge clk_x4_i) begin
         symbol_history_shift_r[3:1] <= symbol_history_shift_r[2:0];
         symbol_history_shift_r[0] <= ram_q;
@@ -94,6 +96,10 @@ module nrzi_phase_lock_decoder (
         write_addr_r <= write_addr_next;
         write_data_r <= write_data_next;
         ram_q2 <= ram_q;
+
+        // to deal with potential metastability
+        nrzi_q <= nrzi_i;
+        nrzi_q2 <= nrzi_q;
     end
 
     var bit [2:0] current_read_window_qr;
@@ -106,7 +112,7 @@ module nrzi_phase_lock_decoder (
 
     always_comb begin
         write_addr_next = write_addr_r + 6'b1;
-        write_data_next = nrzi_i;
+        write_data_next = nrzi_q2;
 
         unique case (decoder_state)
             StIdle: begin

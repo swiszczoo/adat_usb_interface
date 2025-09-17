@@ -1,4 +1,4 @@
-vlog +acc=npr ../../tb/nrzi_phase_lock_decoder_tb.sv
+vlog +acc=npr ../../tb/nrzi_phase_lock_decoder_tb.sv ../../modules/simple_dual_port_ram_single_clock.sv +define+SIMULATION
 vsim -sv_seed random nrzi_phase_lock_decoder_tb
 add wave -position insertpoint  \
     sim:/nrzi_phase_lock_decoder_tb/in_bit_o \

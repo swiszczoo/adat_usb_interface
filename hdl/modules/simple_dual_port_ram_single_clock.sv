@@ -11,7 +11,17 @@ module simple_dual_port_ram_single_clock
     output reg [(DATA_WIDTH-1):0] q
 );
     // Declare the RAM variable
-    reg [DATA_WIDTH-1:0] ram[2**ADDR_WIDTH-1:0];
+    (* ramstyle = "M9K" *) reg [DATA_WIDTH-1:0] ram[2**ADDR_WIDTH-1:0];
+
+    // M9K blocks are guaranteed to be initialized to zero in hardware
+    `ifdef SIMULATION
+        initial begin
+            $display("Set ram contents to zero");
+            for (int i = 0; i < 2**ADDR_WIDTH; i++) begin
+                ram[i] = '0;
+            end
+        end
+    `endif
 
     always @ (posedge clk) begin
         // Write
