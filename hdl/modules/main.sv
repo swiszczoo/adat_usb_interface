@@ -23,6 +23,8 @@ module main (
     output          i2s_2_lrclk_o,
     output          adat_out_1_o,   // channels 1-8 OUT
     output          adat_out_2_o,   // channels 9-16 OUT
+    output          adat_loopback_1_o,
+    output          adat_loopback_2_o,
     output          i2s_running_o,
     output          adat_1_locked_o,
     output          adat_2_locked_o,

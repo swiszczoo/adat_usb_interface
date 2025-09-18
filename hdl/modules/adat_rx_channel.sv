@@ -2,6 +2,7 @@ module adat_rx_channel (
     input           clk_x4_i,
     input           adat_i,
     input           resync_req_i,
+    input           reset_i,
     output          i2s_data_o,
     output          i2s_bclk_o,
     output          i2s_lrclk_o,
@@ -33,7 +34,7 @@ module adat_rx_channel (
     ) u_adat_decoder (
         .clk_x4_i                 (clk_x4_i),
         .nrzi_i                   (adat_i),
-        .reset_i                  (1'b0),
+        .reset_i                  (reset_i),
         .clk_main_tick_no         (clk_main_tick),
         .ram_write_en_o           (ram_write_en),
         .ram_write_addr_o         (ram_write_addr),

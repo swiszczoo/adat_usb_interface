@@ -75,10 +75,6 @@ module adat_decoder_tb (
     bit ok = 1'b1;
 
     initial begin
-        for (int i = 0; i < 2048; i++) begin
-            u_channel_buffer.u_simple_dual_port_ram_single_clock.ram[i] = 'b0;
-        end
-
         gen.initialize();
 
         for (int i = 0; i < 2048; i++) begin
