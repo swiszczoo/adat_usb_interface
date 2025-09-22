@@ -99,4 +99,5 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i2s_running_o
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to mcu_ready_i
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to pll_locked_o
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sel_clk_o
+set_global_assignment -name QIP_FILE ip/fifo_dual_clock.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

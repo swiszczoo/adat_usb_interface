@@ -3,7 +3,7 @@
 
 `timescale 10ns / 1ns
 module i2s_msb_receiver_tb(
-    output                      clk_x4_o,
+    output                      clk_o,
     output                      i2s_running_o,
     output                      i2s_data_o,
     output                      i2s_bclk_o,
@@ -17,7 +17,7 @@ module i2s_msb_receiver_tb(
     var bit i2s_data_state_r = '0;
     var bit i2s_bclk_state_r = '1;
 
-    assign clk_x4_o = clk_state_r;
+    assign clk_o = clk_state_r;
     assign i2s_running_o = i2s_running_state_r;
     assign i2s_data_o = i2s_data_state_r;
     assign i2s_bclk_o = i2s_bclk_state_r;
@@ -25,7 +25,7 @@ module i2s_msb_receiver_tb(
     i2s_msb_receiver #(
         .CIRC_BUF_BITS              (3)
     ) u_i2s_msb_receiver (
-        .clk_x4_i                   (clk_state_r),
+        .clk_i                      (clk_state_r),
         .i2s_running_i              (i2s_running_state_r),
         .i2s_data_i                 (i2s_data_state_r),
         .i2s_bclk_i                 (i2s_bclk_o),
@@ -48,9 +48,9 @@ module i2s_msb_receiver_tb(
     initial begin
         forever begin
             clk_state_r = '1;
-            #1;
+            #4;
             clk_state_r = '0;
-            #1;
+            #4;
         end
     end
 
@@ -102,6 +102,7 @@ module i2s_msb_receiver_tb(
         i2s_running_state_r = '0;
         i2s_data_state_r = '0;
         #(8 * 256);
+        #1;
     
         // Validate received data
         for (int i = 0; i < 2048; i++) begin
@@ -114,6 +115,15 @@ module i2s_msb_receiver_tb(
             $display("Everything is ok!");
         end else begin
             $display("Something is wrong!");
+            $display("Expected content in RAM:");
+            $display("%b", i2s_out);
+
+            for (int i = 0; i < 2048; i++) begin
+                i2s_out[2047 - i] = u_channel_buffer.u_simple_dual_port_ram_single_clock.ram[i];
+            end
+            
+            $display("Actual content in RAM:");
+            $display("%b", i2s_out);
         end
 
         $stop;

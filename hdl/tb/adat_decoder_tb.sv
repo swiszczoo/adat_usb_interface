@@ -1,11 +1,13 @@
+`include "../ip/fifo_dual_clock.v"
 `include "../modules/adat_decoder.sv"
 `include "../modules/channel_buffer.sv"
 `include "jitter_generator.sv"
 
 `timescale 10ns / 1ns
 module adat_decoder_tb (
+    output          clk_o,
+    output          clk_x4_o,
     output reg      adat_in_o,
-    output          clk_main_tick_no,
     output          ram_write_en_o,
     output [10:0]   ram_write_addr_o,
     output          ram_write_data_o,
@@ -14,16 +16,20 @@ module adat_decoder_tb (
     output          has_sync_o
 );
     var bit clk_state_r = '0;
+    var bit clk_state_x4_r = '0;
     var bit adat_state_r = '0;
     var bit reset_state_r = '0;
+
+    assign clk_o = clk_state_r;
+    assign clk_x4_o = clk_state_x4_r;
 
     adat_decoder #(
         .CIRC_BUF_BITS              (3)
     ) u_adat_decoder (
-        .clk_x4_i                   (clk_state_r),
+        .clk_i                      (clk_state_r),
+        .clk_x4_i                   (clk_state_x4_r),
         .nrzi_i                     (adat_state_r),
         .reset_i                    (reset_state_r),
-        .clk_main_tick_no           (clk_main_tick_no),
         .ram_write_en_o             (ram_write_en_o),
         .ram_write_addr_o           (ram_write_addr_o),
         .ram_write_data_o           (ram_write_data_o),
@@ -48,13 +54,23 @@ module adat_decoder_tb (
     var bit [2047:0] i2s_out;
     const real jitter_amount = 2.0;
 
-    // Clock process
+    // x4 clock process
+    initial begin
+        forever begin
+            clk_state_x4_r = '1;
+            #1;
+            clk_state_x4_r = '0;
+            #1;
+        end
+    end
+    
+    // System clock process
     initial begin
         forever begin
             clk_state_r = '1;
-            #1;
+            #4;
             clk_state_r = '0;
-            #1;
+            #4;
         end
     end
 
@@ -93,16 +109,25 @@ module adat_decoder_tb (
         i2s_out = i2s_out << 256;
 
         for (int i = 0; i < 2048; i++) begin
-            if (i2s_out[2047 - i] != ram_data) ok = 1'b0;
-
-            ram_read_addr = ram_read_addr + 1'b1;
-            #2;
+            if (i2s_out[2047 - i] != u_channel_buffer.u_simple_dual_port_ram_single_clock.ram[i]) begin
+                $display("Invalid bit at pos %d", i);
+                ok = 1'b0;
+            end
         end
 
         if (ok) begin
             $display("Everything is ok!");
         end else begin
             $display("Something is wrong!");
+            $display("Expected content in RAM:");
+            $display("%b", i2s_out);
+
+            for (int i = 0; i < 2048; i++) begin
+                i2s_out[2047 - i] = u_channel_buffer.u_simple_dual_port_ram_single_clock.ram[i];
+            end
+            
+            $display("Actual content in RAM:");
+            $display("%b", i2s_out);
         end
 
         $stop;

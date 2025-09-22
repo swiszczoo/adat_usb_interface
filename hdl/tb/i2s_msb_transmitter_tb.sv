@@ -3,7 +3,7 @@
 
 `timescale 10ns / 1ns
 module i2s_msb_transmitter_tb (
-    output                          clk_x4_o,
+    output                          clk_o,
     output                          ram_data_o,
     output                          resync_req_o,
     output [ 2:0]                   last_good_frame_idx_o,
@@ -17,40 +17,40 @@ module i2s_msb_transmitter_tb (
     var bit resync_req_state_r = '0;
     var bit [2:0] last_good_frame_idx_state_r = '0;
 
-    assign clk_x4_o = clk_state_r;
+    assign clk_o = clk_state_r;
     assign resync_req_o = resync_req_state_r;
     assign last_good_frame_idx_o = last_good_frame_idx_state_r;
 
     channel_buffer u_channel_buffer (
-        .write_data_i    (1'b0),
-        .read_addr_i     (ram_read_addr_o),
-        .write_addr_i    ('0),
-        .wr_en_i         (1'b0),
-        .clk_i           (clk_state_r),
-        .read_data_o     (ram_data_o)
+        .write_data_i               (1'b0),
+        .read_addr_i                (ram_read_addr_o),
+        .write_addr_i               ('0),
+        .wr_en_i                    (1'b0),
+        .clk_i                      (clk_state_r),
+        .read_data_o                (ram_data_o)
     );
 
     i2s_msb_transmitter #(
-        .CIRC_BUF_BITS            (3)
+        .CIRC_BUF_BITS              (3)
     ) u_i2s_msb_transmitter (
-        .clk_x4_i                 (clk_state_r),
-        .ram_data_i               (ram_data_o),
-        .resync_req_i             (resync_req_state_r),
-        .last_good_frame_idx_i    (last_good_frame_idx_state_r),
-        .ram_read_addr_o          (ram_read_addr_o),
-        .i2s_running_o            (i2s_running_o),
-        .i2s_bclk_o               (i2s_bclk_o),
-        .i2s_lrclk_o              (i2s_lrclk_o),
-        .i2s_data_ro              (i2s_data_ro)
+        .clk_i                      (clk_state_r),
+        .ram_data_i                 (ram_data_o),
+        .resync_req_i               (resync_req_state_r),
+        .last_good_frame_idx_i      (last_good_frame_idx_state_r),
+        .ram_read_addr_o            (ram_read_addr_o),
+        .i2s_running_o              (i2s_running_o),
+        .i2s_bclk_o                 (i2s_bclk_o),
+        .i2s_lrclk_o                (i2s_lrclk_o),
+        .i2s_data_ro                (i2s_data_ro)
     );
 
-    // Clock process
+    // System clock process
     initial begin
         forever begin
             clk_state_r = '1;
-            #1;
+            #4;
             clk_state_r = '0;
-            #1;
+            #4;
         end
     end
 

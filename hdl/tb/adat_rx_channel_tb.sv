@@ -1,8 +1,10 @@
+`include "../ip/fifo_dual_clock.v"
 `include "../modules/adat_rx_channel.sv"
 `include "../modules/channel_buffer.sv"
 `include "jitter_generator.sv"
 
 module adat_rx_channel_tb (
+    output          clk_o,
     output          clk_x4_o,
     output          adat_o,
     output          resync_req_o,
@@ -15,24 +17,27 @@ module adat_rx_channel_tb (
     output [ 3:0]   adat_user_o
 );
     var bit clk_state_r = '0;
+    var bit clk_state_x4_r = '0;
     var bit adat_state_r = '0;
     var bit reset_state_r = '0;
     var bit resync_req_state_r = '0;
 
     adat_rx_channel u_adat_rx_channel (
-        .clk_x4_i         (clk_state_r),
-        .adat_i           (adat_state_r),
-        .resync_req_i     (resync_req_state_r),
-        .reset_i          (reset_state_r),
-        .i2s_data_o       (i2s_data_o),
-        .i2s_bclk_o       (i2s_bclk_o),
-        .i2s_lrclk_o      (i2s_lrclk_o),
-        .i2s_running_o    (i2s_running_o),
-        .adat_locked_o    (adat_locked_o),
-        .adat_user_o      (adat_user_o)
+        .clk_i                      (clk_state_r),
+        .clk_x4_i                   (clk_state_x4_r),
+        .adat_i                     (adat_state_r),
+        .resync_req_i               (resync_req_state_r),
+        .reset_i                    (reset_state_r),
+        .i2s_data_o                 (i2s_data_o),
+        .i2s_bclk_o                 (i2s_bclk_o),
+        .i2s_lrclk_o                (i2s_lrclk_o),
+        .i2s_running_o              (i2s_running_o),
+        .adat_locked_o              (adat_locked_o),
+        .adat_user_o                (adat_user_o)
     );
 
-    assign clk_x4_o = clk_state_r;
+    assign clk_o = clk_state_r;
+    assign clk_x4_o = clk_state_x4_r;
     assign adat_o = adat_state_r;
     assign resync_req_o = resync_req_state_r;
     assign reset_o = reset_state_r;
@@ -44,9 +49,10 @@ module adat_rx_channel_tb (
     i2s_msb_receiver #(
         .CIRC_BUF_BITS              (3)
     ) u_i2s_msb_receiver (
-        .clk_x4_i                   (clk_state_r),
+        .clk_i                      (clk_state_r),
         .i2s_running_i              (i2s_running_o),
         .i2s_data_i                 (i2s_data_o),
+        .i2s_bclk_i                 (i2s_bclk_o),
         .ram_write_addr_o           (ram_write_addr_o),
         .ram_write_en_o             (ram_write_en_o),
         .ram_write_data_o           (ram_write_data_o),
@@ -67,13 +73,23 @@ module adat_rx_channel_tb (
     var bit [2047:0] i2s_out;
     const real jitter_amount = 2.0;
 
-    // Clock process
+    // x4 clock process
+    initial begin
+        forever begin
+            clk_state_x4_r = '1;
+            #1;
+            clk_state_x4_r = '0;
+            #1;
+        end
+    end
+
+    // System clock process
     initial begin
         forever begin
             clk_state_r = '1;
-            #1;
+            #4;
             clk_state_r = '0;
-            #1;
+            #4;
         end
     end
 

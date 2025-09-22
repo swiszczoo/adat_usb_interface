@@ -1,9 +1,10 @@
 vlog +acc=npr ../../tb/adat_decoder_tb.sv ../../modules/simple_dual_port_ram_single_clock.sv +define+SIMULATION
-vsim -sv_seed random adat_decoder_tb
+vsim -sv_seed random adat_decoder_tb -L altera_mf_ver -L altera_lnsim_ver
 add wave -position insertpoint  \
+    sim:/adat_decoder_tb/clk_o \
+    sim:/adat_decoder_tb/clk_x4_o \
     sim:/adat_decoder_tb/adat_in_o \
     sim:/adat_decoder_tb/u_adat_decoder/adat_bit \
-    sim:/adat_decoder_tb/clk_main_tick_no \
     sim:/adat_decoder_tb/ram_write_en_o \
     sim:/adat_decoder_tb/ram_write_addr_o \
     sim:/adat_decoder_tb/ram_write_data_o \

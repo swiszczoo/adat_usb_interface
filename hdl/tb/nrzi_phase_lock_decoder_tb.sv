@@ -1,3 +1,4 @@
+`include "../ip/fifo_dual_clock.v"
 `include "../modules/nrzi_phase_lock_decoder.sv"
 `include "jitter_generator.sv"
 
@@ -5,9 +6,8 @@
 module nrzi_phase_lock_decoder_tb(
     output reg      in_bit_o,
     output          nrzi_state_o,
-    output          clk_x4_o,
     output          clk_o,
-    output          clk_main_tick_no,
+    output          clk_x4_o,
     output          data_o,
     output          valid_o,
     output          sync_o
@@ -16,6 +16,7 @@ module nrzi_phase_lock_decoder_tb(
     var bit [559:0] data_rx_r;
     var bit nrzi_state_r = '0;
     var bit clk_state_r = '0;
+    var bit clk_state_x4_r = '0;
     var bit [15:0] write_pos_r = '0;
     const real jitter_amount = 2.0;
 
@@ -23,17 +24,17 @@ module nrzi_phase_lock_decoder_tb(
     wire logic output_valid;
 
     nrzi_phase_lock_decoder u_nrzi_phase_lock_decoder (
-        .clk_x4_i           (clk_state_r),
+        .clk_i              (clk_state_r),
+        .clk_x4_i           (clk_state_x4_r),
         .nrzi_i             (nrzi_state_r),
-        .clk_o              (clk_o),
-        .clk_main_tick_no   (clk_main_tick_no),
         .data_o             (data_o),
         .valid_o            (valid_o),
         .sync_o             (sync_o)
     );
 
     assign nrzi_state_o = nrzi_state_r;
-    assign clk_x4_o = clk_state_r;
+    assign clk_o = clk_state_r;
+    assign clk_x4_o = clk_state_x4_r;
 
     bit data_in;
     jitter_generator jitter_gen = new ();
@@ -78,17 +79,26 @@ module nrzi_phase_lock_decoder_tb(
         $stop;
     end
 
+    // x4 clock process
+    initial begin
+        forever begin
+            clk_state_x4_r = '1;
+            #1;
+            clk_state_x4_r = '0;
+            #1;
+        end
+    end
+
+    // system clock process
     initial begin
         forever begin
             clk_state_r = '1;
-            #1;
+            #4;
             clk_state_r = '0;
-            #1;
-
-            if (!clk_main_tick_no) begin
-                data_rx_r[write_pos_r] = data_o;
-                write_pos_r = write_pos_r + 'd1;
-            end
+            #4;
+            
+            data_rx_r[write_pos_r] = data_o;
+            write_pos_r = write_pos_r + 'd1;
         end
     end
 endmodule

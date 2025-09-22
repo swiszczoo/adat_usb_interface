@@ -2,7 +2,7 @@ vlog +acc=npr ../../tb/i2s_msb_receiver_tb.sv ../../modules/simple_dual_port_ram
 vsim -sv_seed random i2s_msb_receiver_tb
 
 add wave -position insertpoint  \
-    sim:/i2s_msb_receiver_tb/clk_x4_o \
+    sim:/i2s_msb_receiver_tb/clk_o \
     sim:/i2s_msb_receiver_tb/i2s_running_o \
     sim:/i2s_msb_receiver_tb/i2s_data_o \
     sim:/i2s_msb_receiver_tb/i2s_bclk_o \

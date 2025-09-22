@@ -3,11 +3,11 @@
 module adat_decoder #(
     parameter CIRC_BUF_BITS=3
 ) (
+    input                                   clk_i,
     input                                   clk_x4_i,
     input                                   nrzi_i,
     input                                   reset_i,
 
-    output                                  clk_main_tick_no,
     output                                  ram_write_en_o,
     output [CIRC_BUF_BITS-1+8:0]            ram_write_addr_o,
     output                                  ram_write_data_o,
@@ -46,16 +46,15 @@ module adat_decoder #(
     wire adat_sync_now = adat_sync && adat_sync_q && adat_sync_q2;
 
     nrzi_phase_lock_decoder u_nrzi_phase_lock_decoder (
-        .clk_x4_i            (clk_x4_i),
-        .nrzi_i              (nrzi_i),
-        .clk_o               (),
-        .clk_main_tick_no    (clk_main_tick_no),
-        .data_o              (adat_bit),
-        .valid_o             (adat_valid),
+        .clk_i                  (clk_i),
+        .clk_x4_i               (clk_x4_i),
+        .nrzi_i                 (nrzi_i),
+        .data_o                 (adat_bit),
+        .valid_o                (adat_valid),
 
         // starts outputting 1 after 8 consecutive zeroes
         // can be used for ADAT frame synchronization
-        .sync_o              (adat_sync)
+        .sync_o                 (adat_sync)
     );
 
     decoder_state_e decoder_state = StIdle;
@@ -182,26 +181,24 @@ module adat_decoder #(
         end
     end
 
-    always_ff @(posedge clk_x4_i) begin
-        if (!clk_main_tick_no) begin
-            adat_sync_q <= adat_sync;
-            adat_sync_q2 <= adat_sync_q;
+    always_ff @(posedge clk_i) begin
+        adat_sync_q <= adat_sync;
+        adat_sync_q2 <= adat_sync_q;
 
-            decoder_state <= decoder_state_next;
+        decoder_state <= decoder_state_next;
 
-            has_sync_r <= has_sync_next;
-            user_bits_qr <= user_bits_q_next;
-            user_bits_r <= user_bits_next;
-            nibble_counter_r <= nibble_counter_next;
-            last_good_frame_idx_r <= last_good_frame_idx_next;
-            addr_hi_r <= addr_hi_next;
-            addr_mi_r <= addr_mi_next;
-            addr_lo_r <= addr_lo_next;
-            addr_mi_q <= addr_mi_r;
-            addr_lo_q <= addr_lo_r;
-            write_en_r <= write_en_next;
-            write_data_r <= write_data_next;
-        end
+        has_sync_r <= has_sync_next;
+        user_bits_qr <= user_bits_q_next;
+        user_bits_r <= user_bits_next;
+        nibble_counter_r <= nibble_counter_next;
+        last_good_frame_idx_r <= last_good_frame_idx_next;
+        addr_hi_r <= addr_hi_next;
+        addr_mi_r <= addr_mi_next;
+        addr_lo_r <= addr_lo_next;
+        addr_mi_q <= addr_mi_r;
+        addr_lo_q <= addr_lo_r;
+        write_en_r <= write_en_next;
+        write_data_r <= write_data_next;
     end
 
     assign ram_write_en_o = write_en_r;

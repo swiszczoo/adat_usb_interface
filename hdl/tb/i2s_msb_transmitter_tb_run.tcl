@@ -1,7 +1,7 @@
 vlog +acc=npr ../../tb/i2s_msb_transmitter_tb.sv ../../modules/simple_dual_port_ram_single_clock.sv +define+SIMULATION
 vsim -sv_seed random i2s_msb_transmitter_tb
 add wave -position insertpoint  \
-    sim:/i2s_msb_transmitter_tb/clk_x4_o \
+    sim:/i2s_msb_transmitter_tb/clk_o \
     sim:/i2s_msb_transmitter_tb/ram_data_o \
     sim:/i2s_msb_transmitter_tb/resync_req_o \
     sim:/i2s_msb_transmitter_tb/last_good_frame_idx_o \

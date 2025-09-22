@@ -1,10 +1,12 @@
 // This version uses circular buffer in BRAM and can decode shittier clocks
 module nrzi_phase_lock_decoder (
+    input           clk_i,
     input           clk_x4_i,
-    input           nrzi_i,
     
-    output          clk_o,
-    output          clk_main_tick_no,
+    // This will be sampled in clk_x4_i domain
+    input           nrzi_i, 
+
+    // This pins are in clk_i clock domain
     output          data_o,
     output          valid_o,
     output          sync_o              // starts outputting 1 after 8 consecutive zeroes
@@ -35,7 +37,7 @@ module nrzi_phase_lock_decoder (
     end
 
     assign clk_o = !clk_div_r[1];
-    assign clk_main_tick_no = clk_main_tick_nr;
+    wire clk_main_tick = clk_main_tick_nr;
 
     // Decoder
     decoder_state_e decoder_state = StIdle;
@@ -77,8 +79,26 @@ module nrzi_phase_lock_decoder (
         .q              (ram_q)
     );
 
+    // FIFO
+    wire [2:0] fifo_q;
+    wire fifo_wrfull, fifo_rdempty;
+    logic fifo_wrreq_next;
+    wire [2:0] fifo_wrdata_next;
+    wire fifo_rdreq_next = !fifo_rdempty;
+
+    fifo_dual_clock u_fifo (
+        .data           (fifo_wrdata_next),
+        .rdclk          (clk_i),
+        .rdreq          (fifo_rdreq_next),
+        .wrclk          (clk_x4_i),
+        .wrreq          (fifo_wrreq_next),
+        .q              (fifo_q),
+        .rdempty        (fifo_rdempty),
+        .wrfull         (fifo_wrfull)
+    );
+
     always_comb begin
-        if (!clk_main_tick_no) begin
+        if (!clk_main_tick) begin
             read_addr_actual <= read_addr_next;
         end else begin
             read_addr_actual <= read_addr_r + 6'b1;
@@ -100,6 +120,8 @@ module nrzi_phase_lock_decoder (
         // to deal with potential metastability
         nrzi_q <= nrzi_i;
         nrzi_q2 <= nrzi_q;
+
+        fifo_wrreq_next = !clk_main_tick && !fifo_wrfull;
     end
 
     var bit [2:0] current_read_window_qr;
@@ -302,7 +324,7 @@ module nrzi_phase_lock_decoder (
     end
 
     always_ff @(posedge clk_x4_i) begin
-        if (!clk_main_tick_no) begin
+        if (!clk_main_tick) begin
             decoder_state <= decoder_state_next;
 
             current_zeros_count_r <= current_zeros_count_next;
@@ -317,7 +339,30 @@ module nrzi_phase_lock_decoder (
         end
     end
 
-    assign data_o = data_r;
-    assign valid_o = decoder_state == StSynced;
-    assign sync_o = current_zeros_count_r[3];
+    assign fifo_wrdata_next = { data_r, decoder_state == StSynced, current_zeros_count_r[3] };
+
+    // Retrieve data on clk_i domain
+    var bit [2:0] fifo_delay_r = 3'b0;
+    logic [2:0] fifo_delay_next;
+    wire fifo_valid = fifo_delay_r >= 3'd4 && !fifo_rdempty;
+
+    var bit data_out_r = '0;
+    var bit valid_out_r = '0;
+    var bit sync_out_r = '0;
+
+    always_comb begin
+        fifo_delay_next = (!fifo_valid) ? fifo_delay_r + 3'b1 : fifo_delay_r;
+    end
+
+    always_ff @(posedge clk_i) begin
+        fifo_delay_r <= fifo_delay_next;
+
+        data_out_r <= fifo_valid ? fifo_q[2] : '0;
+        valid_out_r <= fifo_valid ? fifo_q[1] : '0;
+        sync_out_r <= fifo_valid ? fifo_q[0] : '0;
+    end
+
+    assign data_o = data_out_r;
+    assign valid_o = valid_out_r;
+    assign sync_o = sync_out_r;
 endmodule
