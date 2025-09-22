@@ -64,7 +64,7 @@ module i2s_msb_transmitter #(
                 StOutputData: begin
                     if (soon_next_frame) begin
                         if (new_frame_available) begin
-                            read_frame_next = read_frame_r + 1'b1;
+                            read_frame_next = last_good_frame_idx_i;
                             missed_frames_next = '0;
                         end else begin
                             missed_frames_next = missed_frames_r + 1'b1;

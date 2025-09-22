@@ -4,7 +4,6 @@ module i2s_msb_receiver #(
     input                           clk_i,
     input                           i2s_running_i,
     input                           i2s_data_i,
-    input                           i2s_bclk_i,
 
     output [CIRC_BUF_BITS-1+8:0]    ram_write_addr_o,
     output                          ram_write_en_o,
@@ -41,10 +40,10 @@ module i2s_msb_receiver #(
         end
     end
 
-    // Sample using this clock to avoid setup/hold violations
+    // Sample using bclk to avoid setup/hold violations
     // BCLK is driven by us (our systemclk), so we shouldn't have any timing
     // issues
-    always_ff @(posedge i2s_bclk_i) begin
+    always_ff @(negedge clk_i) begin
         i2s_data_q <= i2s_data_i;
     end
 

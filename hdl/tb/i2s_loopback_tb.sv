@@ -55,7 +55,6 @@ module i2s_loopback_tb (
         .clk_i                      (clk_state_r),
         .i2s_running_i              (i2s_running_o),
         .i2s_data_i                 (i2s_data_ro),
-        .i2s_bclk_i                 (i2s_bclk_o),
         .ram_write_addr_o           (ram_write_addr_o),
         .ram_write_en_o             (ram_write_en_o),
         .ram_write_data_o           (ram_write_data_o),
