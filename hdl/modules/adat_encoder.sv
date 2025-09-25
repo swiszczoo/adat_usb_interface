@@ -116,8 +116,8 @@ module adat_encoder #(
                         adat_state_next = StTransmitSync;
                     end
 
-                    read_addr_mi_next = last_sample ? (read_addr_mi_r + 'd1) : (read_addr_mi_r);
-                    read_addr_lo_next = last_sample ? '0 : (read_addr_lo_r + 'd1);
+                    read_addr_mi_next = last_sample ? (read_addr_mi_r + 3'd1) : (read_addr_mi_r);
+                    read_addr_lo_next = last_sample ? 5'd0 : (read_addr_lo_r + 5'd1);
 
                     adat_bit = actual_data;
                 end

@@ -19,7 +19,6 @@ module i2s_msb_receiver #(
     var bit [CIRC_BUF_BITS-1:0] last_good_frame_idx_r;
     logic [CIRC_BUF_BITS-1:0] last_good_frame_idx_next;
 
-    var bit ram_write_en_r = '0;
     logic ram_write_en_next;
 
     var bit i2s_data_q = '0;
@@ -48,7 +47,6 @@ module i2s_msb_receiver #(
     end
 
     always_ff @(posedge clk_i) begin
-        ram_write_en_r <= ram_write_en_next;
         write_frame_r <= write_frame_next;
         write_addr_lo_r <= write_addr_lo_next;
         last_good_frame_idx_r <= last_good_frame_idx_next;

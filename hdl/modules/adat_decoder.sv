@@ -143,7 +143,7 @@ module adat_decoder #(
                     user_bits_next[3] = adat_bit;
                     addr_mi_next = '0;
                     addr_lo_next = '0;
-                    nibble_counter_next = full_nibble ? '0 : nibble_counter_r + 'd1;
+                    nibble_counter_next = full_nibble ? 3'd0 : nibble_counter_r + 3'd1;
 
                     if (!valid_adat_bit) begin
                         decoder_state_next = StError;
@@ -153,7 +153,7 @@ module adat_decoder #(
                 end // StDecodingUser
                 StDecodingSamples: begin
                     user_bits_next = user_bits_r;
-                    nibble_counter_next = full_nibble ? '0 : nibble_counter_r + 'd1;
+                    nibble_counter_next = full_nibble ? 3'd0 : nibble_counter_r + 3'd1;
 
                     if (first_in_nibble) begin
                         decoder_state_next = valid_adat_bit ? StDecodingSamples : StError;
@@ -164,8 +164,8 @@ module adat_decoder #(
                             decoder_state_next = valid_adat_bit ? StDecodingSamples : StError;
                         end
 
-                        addr_mi_next = last_sample ? (addr_mi_r + 'd1) : (addr_mi_r);
-                        addr_lo_next = last_sample ? '0 : (addr_lo_r + 'd1);
+                        addr_mi_next = last_sample ? (addr_mi_r + 3'd1) : (addr_mi_r);
+                        addr_lo_next = last_sample ? 5'd0 : (addr_lo_r + 5'd1);
 
                         write_en_next = 'b1;
                         write_data_next = adat_bit;
@@ -173,7 +173,7 @@ module adat_decoder #(
                 end // StDecodingSamples
                 StCommit: begin
                     decoder_state_next = StWaitForAdatSync;
-                    addr_hi_next = addr_hi_r + 'd1;
+                    addr_hi_next = addr_hi_r + 1'd1;
                     last_good_frame_idx_next = addr_hi_r;
                     user_bits_q_next = user_bits_r;
                     has_sync_next = '1;

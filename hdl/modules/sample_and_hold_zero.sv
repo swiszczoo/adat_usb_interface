@@ -10,6 +10,8 @@ module sample_and_hold_zero #(
     output      signal_o
 );
     localparam BITS = $clog2(COUNTER_VAL + 1);
+	 
+	 typedef bit [BITS-1:0] counter_type;
 
     var bit [BITS-1:0] counter_r = '0;
     logic [BITS-1:0] counter_next;
@@ -20,10 +22,10 @@ module sample_and_hold_zero #(
     always_comb begin
         if (counter_r > 0) begin
             signal_next = '0;
-            counter_next = counter_r - 1;
+            counter_next = counter_r - counter_type'(1);
         end else begin
             signal_next = signal_i;
-            counter_next = signal_i ? 0 : COUNTER_VAL;
+            counter_next = signal_i ? counter_type'(0) : counter_type'(COUNTER_VAL);
         end
     end
 

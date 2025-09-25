@@ -32,11 +32,10 @@ module nrzi_phase_lock_decoder (
     var bit clk_main_tick_nr;
 
     always_ff @(posedge clk_x4_i) begin
-        clk_div_r <= clk_div_r + 'b01;
+        clk_div_r <= clk_div_r + 2'b01;
         clk_main_tick_nr <= clk_main_tick_next;
     end
 
-    assign clk_o = !clk_div_r[1];
     wire clk_main_tick = clk_main_tick_nr;
 
     // Decoder
@@ -233,11 +232,11 @@ module nrzi_phase_lock_decoder (
                     unique case (current_read_window_q)
                         'b0000: begin
                             data_next = 'b0;
-                            current_zeros_count_next = current_zeros_count_r + 'd1;
+                            current_zeros_count_next = current_zeros_count_r + 5'd1;
                         end
                         'b1111: begin
                             data_next = 'b0;
-                            current_zeros_count_next = current_zeros_count_r + 'd1;
+                            current_zeros_count_next = current_zeros_count_r + 5'd1;
                         end
                         'b0011: data_next = 'b1;
                         'b1100: data_next = 'b1;
@@ -247,7 +246,7 @@ module nrzi_phase_lock_decoder (
                                 decoder_state_next = StIdle;
                             end else begin
                                 data_next = 'b1;
-                                current_read_pos_next = current_read_pos_next - 'd1;
+                                current_read_pos_next = current_read_pos_next - 5'd1;
                                 read_addr_next = read_addr_r + 6'd2;
                             end
                         end
@@ -257,7 +256,7 @@ module nrzi_phase_lock_decoder (
                                 decoder_state_next = StIdle;
                             end else begin
                                 data_next = 'b1;
-                                current_read_pos_next = current_read_pos_next - 'd1;
+                                current_read_pos_next = current_read_pos_next - 5'd1;
                                 read_addr_next = read_addr_r + 6'd2;
                             end
                         end
@@ -267,7 +266,7 @@ module nrzi_phase_lock_decoder (
                                 decoder_state_next = StIdle;
                             end else begin
                                 data_next = 'b1;
-                                current_read_pos_next = current_read_pos_next + 'd1;
+                                current_read_pos_next = current_read_pos_next + 5'd1;
                                 read_addr_next = read_addr_r;
                             end
                         end
@@ -277,7 +276,7 @@ module nrzi_phase_lock_decoder (
                                 decoder_state_next = StIdle;
                             end else begin
                                 data_next = 'b1;
-                                current_read_pos_next = current_read_pos_next + 'd1;
+                                current_read_pos_next = current_read_pos_next + 5'd1;
                                 read_addr_next = read_addr_r;
                             end
                         end
@@ -291,19 +290,19 @@ module nrzi_phase_lock_decoder (
                         end
                         'b0010: begin
                             data_next = 'b0;
-                            current_zeros_count_next = current_zeros_count_r + 'd1;
+                            current_zeros_count_next = current_zeros_count_r + 5'd1;
                         end
                         'b1101: begin
                             data_next = 'b0;
-                            current_zeros_count_next = current_zeros_count_r + 'd1;
+                            current_zeros_count_next = current_zeros_count_r + 5'd1;
                         end
                         'b0100: begin
                             data_next = 'b0;
-                            current_zeros_count_next = current_zeros_count_r + 'd1;
+                            current_zeros_count_next = current_zeros_count_r + 5'd1;
                         end
                         'b1011: begin
                             data_next = 'b0;
-                            current_zeros_count_next = current_zeros_count_r + 'd1;
+                            current_zeros_count_next = current_zeros_count_r + 5'd1;
                         end
                         default: begin
                             data_next = 'b0;
