@@ -55,11 +55,11 @@ module adat_encoder #(
 
     wire last_channel = read_addr_mi_r == 3'd7;
     wire last_sample = read_addr_lo_r == 5'd23;
-    wire soon_next_frame = (state == StTransmitUserBits && nibble_counter_r == 4'd4);
+    wire soon_next_frame = (adat_state == StTransmitUserBits && nibble_counter_r == 4'd4);
     wire new_frame_available = (last_good_frame_idx_i != read_frame_r);
 
     always_comb begin
-        output_state_next = output_state_r;
+        transmitter_state_next = transmitter_state;
         read_frame_next = read_frame_r;
         missed_frames_next = missed_frames_r;
 
@@ -102,7 +102,7 @@ module adat_encoder #(
         adat_state_next = adat_state;
         read_addr_mi_next = read_addr_mi_r;
         read_addr_lo_next = read_addr_lo_r;
-        user_bits_q_next = user_btis_q;
+        user_bits_q_next = user_bits_q;
 
         unique case (adat_state)
             StTransmitSamples: begin
@@ -159,9 +159,10 @@ module adat_encoder #(
     end
 
     nrzi_encoder u_nrzi_encoder (
-        .clk_i     (clk_i),
-        .data_i    (adat_bit),
-        .data_o    (adat_o)
+        .clk_i                  (clk_i),
+        .data_i                 (adat_bit),
+        .output_en_i            (1'b1),
+        .data_o                 (adat_o)
     );
 
     assign ram_read_addr_o[CIRC_BUF_BITS - 1 + 8:8] = read_frame_next;

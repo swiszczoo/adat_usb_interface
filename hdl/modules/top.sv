@@ -1,4 +1,4 @@
-module main (
+module top (
     input           clk_44100_i,    // 22.5792MHz xtal out
     input           clk_48000_i,    // 24.5760MHz xtal out
     input           adat_in_1_i,    // channels 1-8 IN

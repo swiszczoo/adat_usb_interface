@@ -13,7 +13,9 @@ module adat_decoder #(
     output                                  ram_write_data_o,
     output [CIRC_BUF_BITS-1:0]              last_good_frame_idx_o,
     output [3:0]                            user_bits_o,
-    output                                  has_sync_o
+    output                                  has_sync_o,
+    output                                  raw_adat_o,
+    output                                  raw_adat_valid_o
 );
     typedef enum bit[2:0] {
         // Initial state
@@ -56,6 +58,9 @@ module adat_decoder #(
         // can be used for ADAT frame synchronization
         .sync_o                 (adat_sync)
     );
+
+    assign raw_adat_o = adat_bit;
+    assign raw_adat_valid_o = adat_valid;
 
     decoder_state_e decoder_state = StIdle;
     decoder_state_e decoder_state_next;

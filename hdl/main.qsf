@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M02SCE144C8G
-set_global_assignment -name TOP_LEVEL_ENTITY adat_rx_channel
+set_global_assignment -name TOP_LEVEL_ENTITY top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 24.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:37:56  SEPTEMBER 01, 2025"
 set_global_assignment -name LAST_QUARTUS_VERSION "24.1std.0 Lite Edition"
@@ -57,7 +57,7 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name FLOW_ENABLE_POWER_ANALYZER ON
-set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE 12.5%
+set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE "12.5 %"
 set_global_assignment -name ENABLE_OCT_DONE OFF
 set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
 set_global_assignment -name USE_CONFIGURATION_DEVICE ON
@@ -72,6 +72,11 @@ set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 3
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 5
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 6
 set_global_assignment -name IOBANK_VCCIO 3.3V -section_id 8
+set_global_assignment -name SYSTEMVERILOG_FILE modules/top.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modules/synchronizer_2stage.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modules/nrzi_encoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modules/adat_tx_channel.sv
+set_global_assignment -name SYSTEMVERILOG_FILE modules/adat_encoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/sample_and_hold_zero.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/nrzi_phase_lock_decoder_v2.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/adat_rx_channel.sv
@@ -81,7 +86,7 @@ set_global_assignment -name SYSTEMVERILOG_FILE modules/simple_dual_port_ram_sing
 set_global_assignment -name SYSTEMVERILOG_FILE modules/nrzi_phase_lock_decoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/channel_buffer.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/adat_decoder.sv
-set_global_assignment -name SYSTEMVERILOG_FILE modules/main.sv
+set_global_assignment -name QIP_FILE ip/fifo_dual_clock.qip
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -99,5 +104,4 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to i2s_running_o
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to mcu_ready_i
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to pll_locked_o
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to sel_clk_o
-set_global_assignment -name QIP_FILE ip/fifo_dual_clock.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

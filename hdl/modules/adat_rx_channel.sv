@@ -9,7 +9,9 @@ module adat_rx_channel (
     output          i2s_lrclk_o,
     output          i2s_running_o,
     output          adat_locked_o,
-    output [ 3:0]   adat_user_o
+    output [ 3:0]   adat_user_o,
+    output          raw_adat_o,
+    output          raw_adat_valid_o
 );
     wire ram_write_data;
     wire [10:0] ram_read_addr;
@@ -41,7 +43,9 @@ module adat_rx_channel (
         .ram_write_data_o           (ram_write_data),
         .last_good_frame_idx_o      (last_good_frame_idx),
         .user_bits_o                (adat_user_o),
-        .has_sync_o                 (has_sync)
+        .has_sync_o                 (has_sync),
+        .raw_adat_o                 (raw_adat_o),
+        .raw_adat_valid_o           (raw_adat_valid_o)
     );
 
     i2s_msb_transmitter #(
