@@ -3029,10 +3029,10 @@
 					)
 				)
 			)
-			(pin no_connect line
+			(pin bidirectional line
 				(at -6.35 -1.27 0)
 				(length 2.54)
-				(name "NC"
+				(name "SW_SR"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -3047,10 +3047,10 @@
 					)
 				)
 			)
-			(pin no_connect line
+			(pin bidirectional line
 				(at -6.35 -3.81 0)
 				(length 2.54)
-				(name "NC"
+				(name "SW_LB"
 					(effects
 						(font
 							(size 1.27 1.27)

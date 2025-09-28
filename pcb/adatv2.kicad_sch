@@ -13,7 +13,7 @@
 	(lib_symbols)
 	(text "Subschematics:"
 		(exclude_from_sim no)
-		(at 177.292 28.702 0)
+		(at 177.292 28.448 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -23,6 +23,16 @@
 			(justify left)
 		)
 		(uuid "10ccfa6c-dd58-4312-b58a-e4c08a5c0955")
+	)
+	(polyline
+		(pts
+			(xy 177.8 30.48) (xy 278.13 30.48)
+		)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(uuid "18879838-bf38-4513-a8f7-8300d054e949")
 	)
 	(sheet
 		(at 177.8 35.56)
@@ -45,6 +55,8 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.254)
+					(bold yes)
 				)
 				(justify left bottom)
 			)
@@ -87,6 +99,8 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.254)
+					(bold yes)
 				)
 				(justify left bottom)
 			)
@@ -129,6 +143,8 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.254)
+					(bold yes)
 				)
 				(justify left bottom)
 			)
@@ -171,6 +187,8 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.254)
+					(bold yes)
 				)
 				(justify left bottom)
 			)
@@ -213,6 +231,8 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.254)
+					(bold yes)
 				)
 				(justify left bottom)
 			)
@@ -255,6 +275,8 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.254)
+					(bold yes)
 				)
 				(justify left bottom)
 			)

@@ -2587,6 +2587,39 @@
 		)
 		(uuid "9793f918-bddd-4d88-831a-8ae0a819f516")
 	)
+	(text "IDC Connector"
+		(exclude_from_sim no)
+		(at 54.356 77.724 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.3175)
+			)
+		)
+		(uuid "d2eba6ff-641f-42c0-b695-1a47e9141041")
+	)
+	(text "Power Supply: 9-15V -SMPS-> 5V -LDO-> 3V3"
+		(exclude_from_sim no)
+		(at 147.828 19.558 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.3175)
+			)
+		)
+		(uuid "e081564b-6e18-4045-9c7d-6ac2bb199f5a")
+	)
+	(text "ADAT Terminals"
+		(exclude_from_sim no)
+		(at 186.69 80.518 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.3175)
+			)
+		)
+		(uuid "e568803a-f1b4-4e7b-89ff-e7d5c32a2728")
+	)
 	(junction
 		(at 186.69 35.56)
 		(diameter 0)
@@ -9158,7 +9191,7 @@
 				)
 			)
 		)
-		(property "Value" "Barrel_Jack"
+		(property "Value" "9-15V DC"
 			(at 39.37 31.75 0)
 			(effects
 				(font

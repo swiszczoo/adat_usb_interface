@@ -118,6 +118,249 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector_Display_1"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 -12.446 0)
+				(do_not_autoplace)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Connector_Display_1_1_1"
+				(rectangle
+					(start -3.81 15.748)
+					(end 3.81 -10.922)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin power_in line
+					(at -6.35 13.97 0)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -6.35 11.43 0)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -6.35 8.89 0)
+					(length 2.54)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -6.35 6.35 0)
+					(length 2.54)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -6.35 3.81 0)
+					(length 2.54)
+					(name "A0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -6.35 1.27 0)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -6.35 -1.27 0)
+					(length 2.54)
+					(name "SW_SR"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -6.35 -3.81 0)
+					(length 2.54)
+					(name "SW_LB"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -6.35 -6.35 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -6.35 -8.89 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -6848,10 +7091,10 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at -6.35 -1.27 0)
 					(length 2.54)
-					(name "NC"
+					(name "SW_SR"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -6866,10 +7109,10 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin bidirectional line
 					(at -6.35 -3.81 0)
 					(length 2.54)
-					(name "NC"
+					(name "SW_LB"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -7288,7 +7531,7 @@
 	)
 	(text "I^{2}C addr: 1101001=0xD2"
 		(exclude_from_sim no)
-		(at 160.02 110.998 90)
+		(at 163.068 110.744 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7309,7 +7552,7 @@
 	)
 	(text "I^{2}C addr: 1101000=0xD0"
 		(exclude_from_sim no)
-		(at 160.02 68.834 90)
+		(at 163.068 68.58 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7725,10 +7968,6 @@
 		(uuid "b56f100a-5ec2-4ba2-bb9c-a4d065da6fb6")
 	)
 	(no_connect
-		(at 93.98 147.32)
-		(uuid "bfc499a0-6d1c-4841-a20d-d73587362b82")
-	)
-	(no_connect
 		(at 43.18 114.3)
 		(uuid "d03cd613-315d-4f4e-b74c-b901509f3f4d")
 	)
@@ -7751,10 +7990,6 @@
 	(no_connect
 		(at 93.98 109.22)
 		(uuid "f90d99c5-7ec0-4184-9094-cb8cbacd448f")
-	)
-	(no_connect
-		(at 93.98 144.78)
-		(uuid "fc2833b4-128b-44aa-a3bd-684920275e85")
 	)
 	(no_connect
 		(at 43.18 149.86)
@@ -8022,6 +8257,16 @@
 	)
 	(wire
 		(pts
+			(xy 93.98 147.32) (xy 111.76 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c0f4d13-bd13-461d-9278-d2f12679096b")
+	)
+	(wire
+		(pts
 			(xy 40.64 33.02) (xy 60.96 33.02)
 		)
 		(stroke
@@ -8192,6 +8437,16 @@
 	)
 	(wire
 		(pts
+			(xy 130.81 116.84) (xy 151.13 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2dedf692-4fa1-4ffb-b92b-8f6ba3774c80")
+	)
+	(wire
+		(pts
 			(xy 147.32 148.59) (xy 147.32 151.13)
 		)
 		(stroke
@@ -8319,6 +8574,16 @@
 			(type default)
 		)
 		(uuid "3ebec1df-eaa8-41d4-a73c-17b2d1da54e2")
+	)
+	(wire
+		(pts
+			(xy 93.98 144.78) (xy 111.76 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4107439b-d094-4ff2-8567-18edb281401c")
 	)
 	(wire
 		(pts
@@ -8659,6 +8924,16 @@
 			(type default)
 		)
 		(uuid "516bb8f0-08a7-4c8b-bef9-7da3c38f015a")
+	)
+	(wire
+		(pts
+			(xy 130.81 114.3) (xy 151.13 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51a97ee7-05c5-46bb-8aad-1d3490a33892")
 	)
 	(wire
 		(pts
@@ -10740,6 +11015,16 @@
 		)
 		(uuid "0a65b0df-950e-461e-981a-55e62968137c")
 	)
+	(label "SW_SAMPLERATE"
+		(at 111.76 144.78 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "10e1c604-d1b7-4242-b983-6ac4f9e3cbba")
+	)
 	(label "ULPI_D6"
 		(at 199.39 119.38 0)
 		(effects
@@ -10990,6 +11275,16 @@
 		)
 		(uuid "978208ba-441c-4ef6-8f7d-1916093f79e0")
 	)
+	(label "SW_SAMPLERATE"
+		(at 130.81 114.3 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a2d0fd1b-5106-4517-883e-9adc592f33b9")
+	)
 	(label "ULPI_D7"
 		(at 104.14 101.6 180)
 		(effects
@@ -10999,6 +11294,26 @@
 			(justify right bottom)
 		)
 		(uuid "a92e358b-61a2-4f22-873c-105d8d12fcd5")
+	)
+	(label "SW_LOOPBACK"
+		(at 111.76 147.32 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ae3655be-ada8-4a70-9782-c8f778a07509")
+	)
+	(label "SW_LOOPBACK"
+		(at 130.81 116.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b123bd98-c423-4d4b-b4ec-c3cd93d100c4")
 	)
 	(label "XTAL1"
 		(at 153.67 27.94 180)
@@ -16307,6 +16622,7 @@
 		)
 	)
 	(symbol
+		(lib_name "Connector_Display_1")
 		(lib_id "adatv2:Connector_Display")
 		(at 157.48 71.12 0)
 		(unit 1)
