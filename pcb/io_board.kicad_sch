@@ -6,6 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "16-in, 16-out USB <-> ADAT interface")
+		(date "2025-09-29")
 		(rev "1.0a")
 		(company "Rethera")
 		(comment 1 "Drawn by Łukasz Świszcz")
@@ -5050,7 +5051,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0de2c7c1-ec0a-4d87-b4dc-085811e6b928")
-		(property "Reference" "R?"
+		(property "Reference" "R207"
 			(at 227.33 134.62 90)
 			(effects
 				(font
@@ -5066,7 +5067,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 227.33 138.938 90)
 			(effects
 				(font
@@ -5102,7 +5103,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "R?")
+					(reference "R207")
 					(unit 1)
 				)
 			)
@@ -5117,7 +5118,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0f158c95-26cf-4180-ad75-a47fd9fb80dc")
-		(property "Reference" "R?"
+		(property "Reference" "R205"
 			(at 227.33 106.68 90)
 			(effects
 				(font
@@ -5133,7 +5134,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 227.33 110.998 90)
 			(effects
 				(font
@@ -5169,7 +5170,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "R?")
+					(reference "R205")
 					(unit 1)
 				)
 			)
@@ -5185,7 +5186,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "10f73bd5-ed40-4d59-b226-44d96571e36b")
-		(property "Reference" "C?"
+		(property "Reference" "C211"
 			(at 201.93 102.8699 0)
 			(effects
 				(font
@@ -5203,7 +5204,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 197.1548 107.95 0)
 			(effects
 				(font
@@ -5239,7 +5240,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C211")
 					(unit 1)
 				)
 			)
@@ -5388,7 +5389,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "12123500-e990-46f7-8f1e-28aeb49c6e22")
-		(property "Reference" "R?"
+		(property "Reference" "R204"
 			(at 171.45 106.68 90)
 			(effects
 				(font
@@ -5404,7 +5405,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 171.45 110.998 90)
 			(effects
 				(font
@@ -5440,7 +5441,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "R?")
+					(reference "R204")
 					(unit 1)
 				)
 			)
@@ -5656,7 +5657,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2ca9a684-c8aa-4e64-b772-915e38d87171")
-		(property "Reference" "C?"
+		(property "Reference" "C201"
 			(at 199.898 40.386 0)
 			(effects
 				(font
@@ -5674,7 +5675,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 195.8848 45.72 0)
 			(effects
 				(font
@@ -5710,7 +5711,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C201")
 					(unit 1)
 				)
 			)
@@ -5726,7 +5727,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2e2001f7-4907-4fc4-84d3-1352deded38c")
-		(property "Reference" "L?"
+		(property "Reference" "L203"
 			(at 129.54 121.92 90)
 			(effects
 				(font
@@ -5778,7 +5779,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "L?")
+					(reference "L203")
 					(unit 1)
 				)
 			)
@@ -5861,7 +5862,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "31100ca3-67da-46f8-b70d-c9092ef7496b")
-		(property "Reference" "J?"
+		(property "Reference" "J205"
 			(at 40.005 85.09 0)
 			(effects
 				(font
@@ -5877,7 +5878,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical"
 			(at 40.64 116.84 0)
 			(effects
 				(font
@@ -5967,7 +5968,7 @@
 		(instances
 			(project ""
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "J?")
+					(reference "J205")
 					(unit 1)
 				)
 			)
@@ -6048,7 +6049,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "32e619d8-cd10-4cc6-89cd-6008b35c3baa")
-		(property "Reference" "C?"
+		(property "Reference" "C212"
 			(at 257.81 102.8699 0)
 			(effects
 				(font
@@ -6066,7 +6067,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 253.0348 107.95 0)
 			(effects
 				(font
@@ -6102,7 +6103,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C212")
 					(unit 1)
 				)
 			)
@@ -6449,7 +6450,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "45ff60af-5504-47d1-999c-3720726ea3e2")
-		(property "Reference" "C?"
+		(property "Reference" "C205"
 			(at 164.592 42.926 0)
 			(effects
 				(font
@@ -6467,7 +6468,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 168.6052 48.26 0)
 			(effects
 				(font
@@ -6503,7 +6504,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C205")
 					(unit 1)
 				)
 			)
@@ -6520,7 +6521,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "47f938ff-284e-4dee-a88c-2b7e8c1e918f")
-		(property "Reference" "J?"
+		(property "Reference" "J202"
 			(at 116.84 113.284 0)
 			(do_not_autoplace yes)
 			(effects
@@ -6577,7 +6578,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "J?")
+					(reference "J202")
 					(unit 1)
 				)
 			)
@@ -6592,7 +6593,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4849723c-fe4d-4708-89b7-be1b8e74751e")
-		(property "Reference" "H?"
+		(property "Reference" "H201"
 			(at 38.1 173.228 0)
 			(effects
 				(font
@@ -6643,7 +6644,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "H?")
+					(reference "H201")
 					(unit 1)
 				)
 			)
@@ -6859,7 +6860,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "58f20f07-5062-4374-8951-07e1e8ba7728")
-		(property "Reference" "C?"
+		(property "Reference" "C214"
 			(at 201.93 130.8099 0)
 			(effects
 				(font
@@ -6877,7 +6878,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 197.1548 135.89 0)
 			(effects
 				(font
@@ -6913,7 +6914,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C214")
 					(unit 1)
 				)
 			)
@@ -6930,7 +6931,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5abe2f83-4594-41fa-9d7a-5ad63903d199")
-		(property "Reference" "D?"
+		(property "Reference" "D201"
 			(at 54.9275 29.21 0)
 			(effects
 				(font
@@ -6982,7 +6983,7 @@
 		(instances
 			(project ""
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "D?")
+					(reference "D201")
 					(unit 1)
 				)
 			)
@@ -6997,7 +6998,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5e9f0d72-29dd-4b7e-9eaf-ad74b6753f2f")
-		(property "Reference" "H?"
+		(property "Reference" "H202"
 			(at 46.99 173.228 0)
 			(effects
 				(font
@@ -7048,7 +7049,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "H?")
+					(reference "H202")
 					(unit 1)
 				)
 			)
@@ -7264,7 +7265,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6316a929-1ce4-483f-8eec-57a5499aab17")
-		(property "Reference" "J?"
+		(property "Reference" "J206"
 			(at 116.84 141.224 0)
 			(do_not_autoplace yes)
 			(effects
@@ -7321,7 +7322,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "J?")
+					(reference "J206")
 					(unit 1)
 				)
 			)
@@ -7470,7 +7471,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "64bbecf3-216c-413b-90e7-35a3ca9f8c96")
-		(property "Reference" "C?"
+		(property "Reference" "C206"
 			(at 178.308 42.926 0)
 			(effects
 				(font
@@ -7488,7 +7489,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 174.2948 48.26 0)
 			(effects
 				(font
@@ -7524,7 +7525,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C206")
 					(unit 1)
 				)
 			)
@@ -7540,7 +7541,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "67ca6e44-4310-439f-9737-810fd2a4542e")
-		(property "Reference" "C?"
+		(property "Reference" "C207"
 			(at 212.09 48.6409 0)
 			(effects
 				(font
@@ -7558,7 +7559,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x5.4"
 			(at 214.9348 54.61 0)
 			(effects
 				(font
@@ -7594,7 +7595,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C207")
 					(unit 1)
 				)
 			)
@@ -7610,7 +7611,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "67cd5147-1d24-4ee0-852a-5237a32555e7")
-		(property "Reference" "J?"
+		(property "Reference" "J207"
 			(at 187.96 141.224 0)
 			(do_not_autoplace yes)
 			(effects
@@ -7667,7 +7668,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "J?")
+					(reference "J207")
 					(unit 1)
 				)
 			)
@@ -7683,7 +7684,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "686a6197-02f3-406f-8a42-5a6ea38582ca")
-		(property "Reference" "J?"
+		(property "Reference" "J208"
 			(at 243.84 141.224 0)
 			(do_not_autoplace yes)
 			(effects
@@ -7740,7 +7741,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "J?")
+					(reference "J208")
 					(unit 1)
 				)
 			)
@@ -7889,7 +7890,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6e238a33-dbd8-45f8-bb6a-2afb60834f4b")
-		(property "Reference" "C?"
+		(property "Reference" "C202"
 			(at 71.12 42.926 0)
 			(effects
 				(font
@@ -7907,7 +7908,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x5.4"
 			(at 68.2752 48.26 0)
 			(effects
 				(font
@@ -7943,7 +7944,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C202")
 					(unit 1)
 				)
 			)
@@ -7959,7 +7960,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "758ca7f9-e683-4ad0-a1c8-f0a41f076c91")
-		(property "Reference" "J?"
+		(property "Reference" "J204"
 			(at 243.84 113.284 0)
 			(do_not_autoplace yes)
 			(effects
@@ -8016,7 +8017,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "J?")
+					(reference "J204")
 					(unit 1)
 				)
 			)
@@ -8097,7 +8098,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7e3dfb23-cf6e-4b52-8d81-da1cf43e2f09")
-		(property "Reference" "C?"
+		(property "Reference" "C213"
 			(at 104.14 130.8099 0)
 			(effects
 				(font
@@ -8115,7 +8116,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 108.9152 135.89 0)
 			(effects
 				(font
@@ -8151,7 +8152,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C213")
 					(unit 1)
 				)
 			)
@@ -8167,7 +8168,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7e65050c-2b35-4f9d-9009-7347e608a626")
-		(property "Reference" "J?"
+		(property "Reference" "J203"
 			(at 187.96 113.284 0)
 			(do_not_autoplace yes)
 			(effects
@@ -8224,7 +8225,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "J?")
+					(reference "J203")
 					(unit 1)
 				)
 			)
@@ -8239,7 +8240,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7f44ba57-748f-4efc-9e9d-90a05749d091")
-		(property "Reference" "C?"
+		(property "Reference" "C210"
 			(at 104.14 102.8699 0)
 			(effects
 				(font
@@ -8257,7 +8258,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 108.9152 107.95 0)
 			(effects
 				(font
@@ -8293,7 +8294,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C210")
 					(unit 1)
 				)
 			)
@@ -8374,7 +8375,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8706d3ea-95f7-4d4e-bf37-f992c140637a")
-		(property "Reference" "R?"
+		(property "Reference" "R202"
 			(at 189.738 40.64 0)
 			(effects
 				(font
@@ -8391,7 +8392,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 184.912 41.91 90)
 			(effects
 				(font
@@ -8427,7 +8428,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "R?")
+					(reference "R202")
 					(unit 1)
 				)
 			)
@@ -8442,7 +8443,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "897256ad-c8fc-4aba-bba6-9e2b25fb33c3")
-		(property "Reference" "R?"
+		(property "Reference" "R201"
 			(at 95.25 36.83 90)
 			(effects
 				(font
@@ -8458,7 +8459,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 95.25 41.148 90)
 			(effects
 				(font
@@ -8494,7 +8495,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "R?")
+					(reference "R201")
 					(unit 1)
 				)
 			)
@@ -8509,7 +8510,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8b118775-9603-4a9b-978a-e9ab0de351f8")
-		(property "Reference" "R?"
+		(property "Reference" "R203"
 			(at 189.738 57.15 0)
 			(effects
 				(font
@@ -8526,7 +8527,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 184.912 58.42 90)
 			(effects
 				(font
@@ -8562,7 +8563,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "R?")
+					(reference "R203")
 					(unit 1)
 				)
 			)
@@ -8777,7 +8778,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9941bc4d-60c1-491b-8bf1-d33b0a0de2b4")
-		(property "Reference" "L?"
+		(property "Reference" "L202"
 			(at 129.54 93.98 90)
 			(effects
 				(font
@@ -8829,7 +8830,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "L?")
+					(reference "L202")
 					(unit 1)
 				)
 			)
@@ -8979,7 +8980,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9b04ed4f-6a78-4e5d-ba16-2c9aedd96d78")
-		(property "Reference" "C?"
+		(property "Reference" "C215"
 			(at 257.81 130.8099 0)
 			(effects
 				(font
@@ -8997,7 +8998,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 253.0348 135.89 0)
 			(effects
 				(font
@@ -9033,7 +9034,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C215")
 					(unit 1)
 				)
 			)
@@ -9183,7 +9184,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a6b16413-ba9c-44b8-9ed6-09a28de99b70")
-		(property "Reference" "J?"
+		(property "Reference" "J201"
 			(at 39.37 29.21 0)
 			(effects
 				(font
@@ -9235,7 +9236,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "J?")
+					(reference "J201")
 					(unit 1)
 				)
 			)
@@ -9384,7 +9385,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b04fb292-37c6-412e-966b-8f3b236b1e3c")
-		(property "Reference" "H?"
+		(property "Reference" "H203"
 			(at 55.88 173.228 0)
 			(effects
 				(font
@@ -9435,7 +9436,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "H?")
+					(reference "H203")
 					(unit 1)
 				)
 			)
@@ -9451,7 +9452,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b1f3c440-67e5-4f97-b8c7-02cae6a83db3")
-		(property "Reference" "L?"
+		(property "Reference" "L201"
 			(at 161.29 30.48 90)
 			(effects
 				(font
@@ -9503,7 +9504,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "L?")
+					(reference "L201")
 					(unit 1)
 				)
 			)
@@ -9851,7 +9852,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dba8653f-af45-4d5c-bc18-45fbbb83771e")
-		(property "Reference" "U?"
+		(property "Reference" "U202"
 			(at 113.03 28.448 0)
 			(effects
 				(font
@@ -9915,7 +9916,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "U?")
+					(reference "U202")
 					(unit 1)
 				)
 			)
@@ -10195,7 +10196,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e0e912ae-428a-4aaf-947f-b2b9c419808b")
-		(property "Reference" "C?"
+		(property "Reference" "C204"
 			(at 150.622 43.434 0)
 			(effects
 				(font
@@ -10213,7 +10214,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 154.6352 48.26 0)
 			(effects
 				(font
@@ -10249,7 +10250,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C204")
 					(unit 1)
 				)
 			)
@@ -10265,7 +10266,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e12b637c-ee89-4a94-9b94-8d0dabcb2fba")
-		(property "Reference" "C?"
+		(property "Reference" "C209"
 			(at 257.81 48.6409 0)
 			(effects
 				(font
@@ -10283,7 +10284,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_Elec_6.3x5.4"
 			(at 254.9652 54.61 0)
 			(effects
 				(font
@@ -10319,7 +10320,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C209")
 					(unit 1)
 				)
 			)
@@ -10335,7 +10336,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e36c5a4b-f83b-4b90-b9fd-72939ed74273")
-		(property "Reference" "C?"
+		(property "Reference" "C208"
 			(at 226.568 49.276 0)
 			(effects
 				(font
@@ -10353,7 +10354,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 222.5548 54.61 0)
 			(effects
 				(font
@@ -10389,7 +10390,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C208")
 					(unit 1)
 				)
 			)
@@ -10471,7 +10472,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e46fc45d-a3b0-44e3-a33c-a772bf9f8fec")
-		(property "Reference" "U?"
+		(property "Reference" "U201"
 			(at 240.03 29.21 0)
 			(effects
 				(font
@@ -10526,7 +10527,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "U?")
+					(reference "U201")
 					(unit 1)
 				)
 			)
@@ -10608,7 +10609,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ef38bbaa-ab64-4638-a087-02ca6a331920")
-		(property "Reference" "H?"
+		(property "Reference" "H204"
 			(at 64.77 173.228 0)
 			(effects
 				(font
@@ -10659,7 +10660,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "H?")
+					(reference "H204")
 					(unit 1)
 				)
 			)
@@ -10675,7 +10676,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f4312e69-4af4-4ef6-8466-6b58995afbc4")
-		(property "Reference" "C?"
+		(property "Reference" "C203"
 			(at 83.82 43.18 0)
 			(effects
 				(font
@@ -10693,7 +10694,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 			(at 79.0448 48.26 0)
 			(effects
 				(font
@@ -10729,7 +10730,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "C?")
+					(reference "C203")
 					(unit 1)
 				)
 			)
@@ -10811,7 +10812,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f7e23ff4-faa6-4edf-8043-5f93a34facda")
-		(property "Reference" "R?"
+		(property "Reference" "R206"
 			(at 171.45 134.62 90)
 			(effects
 				(font
@@ -10827,7 +10828,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
 			(at 171.45 138.938 90)
 			(effects
 				(font
@@ -10863,7 +10864,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "R?")
+					(reference "R206")
 					(unit 1)
 				)
 			)

@@ -6,6 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "16-in, 16-out USB <-> ADAT interface")
+		(date "2025-09-29")
 		(rev "1.0a")
 		(company "Rethera")
 		(comment 1 "Drawn by Łukasz Świszcz")
@@ -13,7 +14,7 @@
 	(lib_symbols)
 	(text "Subschematics:"
 		(exclude_from_sim no)
-		(at 177.292 28.448 0)
+		(at 177.292 22.098 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -24,9 +25,49 @@
 		)
 		(uuid "10ccfa6c-dd58-4312-b58a-e4c08a5c0955")
 	)
+	(text "FB-04 Adat Interface"
+		(exclude_from_sim no)
+		(at 24.892 137.16 0)
+		(effects
+			(font
+				(face "Oswald")
+				(size 12.7 12.7)
+				(thickness 0.635)
+				(color 0 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "2b96cacc-b61b-45f0-bca6-1229a5b2d7c0")
+	)
+	(text "Schematics"
+		(exclude_from_sim no)
+		(at 160.274 150.114 0)
+		(effects
+			(font
+				(face "Oswald Medium")
+				(size 6.35 6.35)
+				(color 0 5 127 1)
+			)
+			(justify right)
+		)
+		(uuid "3603a86b-afb9-4218-94ca-93c857771cab")
+	)
+	(text "Rethera"
+		(exclude_from_sim no)
+		(at 25.4 119.38 0)
+		(effects
+			(font
+				(face "Oswald Medium")
+				(size 6.35 6.35)
+				(color 127 127 127 1)
+			)
+			(justify left)
+		)
+		(uuid "b43cf642-1c05-4ae1-9281-9d8de2c15213")
+	)
 	(polyline
 		(pts
-			(xy 177.8 30.48) (xy 278.13 30.48)
+			(xy 177.8 24.13) (xy 278.13 24.13)
 		)
 		(stroke
 			(width 0.254)
@@ -34,9 +75,64 @@
 		)
 		(uuid "18879838-bf38-4513-a8f7-8300d054e949")
 	)
+	(polyline
+		(pts
+			(xy 25.4 139.7) (xy 160.02 139.7)
+		)
+		(stroke
+			(width 1.27)
+			(type solid)
+			(color 0 0 0 1)
+		)
+		(uuid "fed45cf9-1722-46eb-9036-aedb68cf2ee4")
+	)
 	(sheet
-		(at 177.8 35.56)
-		(size 12.7 12.7)
+		(at 177.8 86.36)
+		(size 100.33 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 227 161 1.0000)
+		)
+		(uuid "08abd33d-60ab-496b-975d-0695ad91a870")
+		(property "Sheetname" "FPGA config and peripherals"
+			(at 177.8 85.6484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.254)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "peripherals.kicad_sch"
+			(at 177.8 99.6446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "adatv2"
+				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 177.8 29.21)
+		(size 100.33 12.7)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -51,7 +147,7 @@
 		)
 		(uuid "2798f55d-c401-4d3b-b8be-ffe1fd6e245a")
 		(property "Sheetname" "IO board"
-			(at 177.8 34.8484 0)
+			(at 177.8 28.4984 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -62,7 +158,8 @@
 			)
 		)
 		(property "Sheetfile" "io_board.kicad_sch"
-			(at 177.8 48.8446 0)
+			(at 177.8 42.4946 0)
+			(show_name yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79,8 +176,8 @@
 		)
 	)
 	(sheet
-		(at 177.8 111.76)
-		(size 12.7 12.7)
+		(at 177.8 124.46)
+		(size 100.33 12.7)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -95,7 +192,7 @@
 		)
 		(uuid "48ac3253-1f5d-4e9f-aed5-ac922c87d2ee")
 		(property "Sheetname" "IO main"
-			(at 177.8 111.0484 0)
+			(at 177.8 123.7484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -106,95 +203,8 @@
 			)
 		)
 		(property "Sheetfile" "io.kicad_sch"
-			(at 177.8 125.0446 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "adatv2"
-				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756"
-					(page "6")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 177.8 54.61)
-		(size 12.7 12.7)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 255 227 161 1.0000)
-		)
-		(uuid "60796416-9670-44ee-b184-e89641e8a32b")
-		(property "Sheetname" "Power Supply"
-			(at 177.8 53.8984 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.254)
-					(bold yes)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "power_supply.kicad_sch"
-			(at 177.8 67.8946 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "adatv2"
-				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756"
-					(page "3")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 177.8 132.08)
-		(size 12.7 12.7)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 255 227 161 1.0000)
-		)
-		(uuid "9bc7ef03-1440-4b25-9006-2e198f2c786c")
-		(property "Sheetname" "Display board"
-			(at 177.8 131.3684 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.254)
-					(bold yes)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "display_board.kicad_sch"
-			(at 177.8 145.3646 0)
+			(at 177.8 137.7446 0)
+			(show_name yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -211,8 +221,98 @@
 		)
 	)
 	(sheet
-		(at 177.8 73.66)
-		(size 12.7 12.7)
+		(at 177.8 48.26)
+		(size 100.33 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 227 161 1.0000)
+		)
+		(uuid "60796416-9670-44ee-b184-e89641e8a32b")
+		(property "Sheetname" "Power Supply"
+			(at 177.8 47.5484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.254)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power_supply.kicad_sch"
+			(at 177.8 61.5446 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "adatv2"
+				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 177.8 144.78)
+		(size 100.33 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 227 161 1.0000)
+		)
+		(uuid "9bc7ef03-1440-4b25-9006-2e198f2c786c")
+		(property "Sheetname" "Display board"
+			(at 177.8 144.0684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.254)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "display_board.kicad_sch"
+			(at 177.8 158.0646 0)
+			(show_name yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "adatv2"
+				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 177.8 67.31)
+		(size 100.33 12.7)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -226,8 +326,8 @@
 			(color 255 227 161 1.0000)
 		)
 		(uuid "cefd53d3-c673-4ebe-b3bb-368fd3bd11c0")
-		(property "Sheetname" "MCU, USB and FPGA config"
-			(at 177.8 72.9484 0)
+		(property "Sheetname" "MCU and USB"
+			(at 177.8 66.5984 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -238,7 +338,8 @@
 			)
 		)
 		(property "Sheetfile" "main_board.kicad_sch"
-			(at 177.8 86.9446 0)
+			(at 177.8 80.5946 0)
+			(show_name yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -255,8 +356,8 @@
 		)
 	)
 	(sheet
-		(at 177.8 92.71)
-		(size 12.7 12.7)
+		(at 177.8 105.41)
+		(size 100.33 12.7)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -271,7 +372,7 @@
 		)
 		(uuid "e16f31ee-fe8d-4d79-a2fc-9e86f73bf11c")
 		(property "Sheetname" "FPGA and clock generators"
-			(at 177.8 91.9984 0)
+			(at 177.8 104.6984 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -282,7 +383,8 @@
 			)
 		)
 		(property "Sheetfile" "fpga.kicad_sch"
-			(at 177.8 105.9946 0)
+			(at 177.8 118.6946 0)
+			(show_name yes)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -293,7 +395,7 @@
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756"
-					(page "5")
+					(page "6")
 				)
 			)
 		)
