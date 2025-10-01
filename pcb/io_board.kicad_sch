@@ -12,9 +12,9 @@
 		(comment 1 "Drawn by Łukasz Świszcz")
 	)
 	(lib_symbols
-		(symbol "Connector:Barrel_Jack"
+		(symbol "Connector:Barrel_Jack_Switch"
 			(pin_names
-				(offset 1.016)
+				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -27,7 +27,7 @@
 					)
 				)
 			)
-			(property "Value" "Barrel_Jack"
+			(property "Value" "Barrel_Jack_Switch"
 				(at 0 -5.08 0)
 				(effects
 					(font
@@ -53,7 +53,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "DC Barrel Jack"
+			(property "Description" "DC Barrel Jack with an internal switch"
 				(at 0 0 0)
 				(effects
 					(font
@@ -80,7 +80,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "Barrel_Jack_0_1"
+			(symbol "Barrel_Jack_Switch_0_1"
 				(rectangle
 					(start -5.08 3.81)
 					(end 5.08 -3.81)
@@ -128,6 +128,18 @@
 						(type outline)
 					)
 				)
+				(polyline
+					(pts
+						(xy 1.27 -2.286) (xy 1.905 -1.651)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(rectangle
 					(start 3.683 3.175)
 					(end -3.302 1.905)
@@ -151,8 +163,20 @@
 						(type none)
 					)
 				)
+				(polyline
+					(pts
+						(xy 5.08 0) (xy 1.27 0) (xy 1.27 -2.286) (xy 0.635 -1.651)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 			)
-			(symbol "Barrel_Jack_1_1"
+			(symbol "Barrel_Jack_Switch_1_1"
 				(pin passive line
 					(at 7.62 2.54 180)
 					(length 2.54)
@@ -164,6 +188,24 @@
 						)
 					)
 					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2578,6 +2620,76 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "C41856886"
+		(exclude_from_sim no)
+		(at 112.776 48.006 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0252acee-99fe-4d32-86d1-76f834325ce4")
+	)
+	(text "C189267"
+		(exclude_from_sim no)
+		(at 71.882 48.006 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "20bb051f-832d-450f-a612-bdc6881d677c")
+	)
+	(text "C404762"
+		(exclude_from_sim no)
+		(at 130.556 100.838 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6958bd2f-4674-45f3-a036-67e272cee02c")
+	)
+	(text "C3096082"
+		(exclude_from_sim no)
+		(at 39.37 43.942 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "88a75e51-3a36-44c6-80f1-384d2b3f625c")
+	)
+	(text "C337905"
+		(exclude_from_sim no)
+		(at 161.29 37.592 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8d5994e6-4f6c-4c98-9599-7973d1533d7b")
+	)
+	(text "C2906661"
+		(exclude_from_sim no)
+		(at 54.61 39.116 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "91897eaa-55d6-4598-8666-5f17f7e0556a")
+	)
+	(text "C7501245"
+		(exclude_from_sim no)
+		(at 39.878 145.796 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "91df29ce-a2a4-423b-b5e2-a8b08bfc0aaf")
+	)
 	(text "VIN has Vh>2V, so logic level converter is not needed"
 		(exclude_from_sim no)
 		(at 215.138 87.63 0)
@@ -2587,6 +2699,16 @@
 			)
 		)
 		(uuid "9793f918-bddd-4d88-831a-8ae0a819f516")
+	)
+	(text "C77082"
+		(exclude_from_sim no)
+		(at 85.09 48.006 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "9bebfd72-8fa5-42db-bd39-2d6257ee17cc")
 	)
 	(text "IDC Connector"
 		(exclude_from_sim no)
@@ -2848,6 +2970,10 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ef434661-8bcf-4692-88a2-d5e5e440757f")
+	)
+	(no_connect
+		(at 46.99 38.1)
+		(uuid "461750cf-8532-4145-a1e3-39958c5c4078")
 	)
 	(wire
 		(pts
@@ -5514,6 +5640,77 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Barrel_Jack_Switch")
+		(at 39.37 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "16ac7989-27f5-4f24-bc21-37aa97061089")
+		(property "Reference" "J201"
+			(at 39.37 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "9-15V DC"
+			(at 39.37 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "adatv2:CUI PJ-002A"
+			(at 40.64 39.116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 40.64 39.116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "DC Barrel Jack with an internal switch"
+			(at 39.37 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "f368e58d-2709-43da-bea7-12372705b541")
+		)
+		(pin "1"
+			(uuid "3d86d20c-564b-4ed8-ae1e-ebae3cda6879")
+		)
+		(pin "2"
+			(uuid "47e4a930-de10-4a48-882f-16dbcc302806")
+		)
+		(instances
+			(project ""
+				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
+					(reference "J201")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 107.95 139.7 0)
 		(unit 1)
@@ -5743,7 +5940,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 129.54 127 0)
 			(effects
 				(font
@@ -8376,7 +8573,7 @@
 		(dnp no)
 		(uuid "8706d3ea-95f7-4d4e-bf37-f992c140637a")
 		(property "Reference" "R202"
-			(at 189.738 40.64 0)
+			(at 191.008 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8511,7 +8708,7 @@
 		(dnp no)
 		(uuid "8b118775-9603-4a9b-978a-e9ab0de351f8")
 		(property "Reference" "R203"
-			(at 189.738 57.15 0)
+			(at 191.008 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8794,7 +8991,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_0805_2012Metric_Pad1.15x1.40mm_HandSolder"
 			(at 129.54 99.06 0)
 			(effects
 				(font
@@ -9175,74 +9372,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Barrel_Jack")
-		(at 39.37 38.1 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a6b16413-ba9c-44b8-9ed6-09a28de99b70")
-		(property "Reference" "J201"
-			(at 39.37 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "9-15V DC"
-			(at 39.37 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 40.64 39.116 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 40.64 39.116 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "DC Barrel Jack"
-			(at 39.37 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "739cd8da-cfe8-4d8d-ae83-57f48596cbec")
-		)
-		(pin "2"
-			(uuid "4d8d7267-e673-4d89-a99f-a34db6b11ce1")
-		)
-		(instances
-			(project "adatv2"
-				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/2798f55d-c401-4d3b-b8be-ffe1fd6e245a"
-					(reference "J201")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 158.75 181.61 270)
 		(unit 1)
@@ -9460,7 +9589,7 @@
 				)
 			)
 		)
-		(property "Value" "1.2u"
+		(property "Value" "3.3u"
 			(at 161.29 33.02 90)
 			(effects
 				(font
@@ -9468,7 +9597,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_1210_3225Metric_Pad1.42x2.65mm_HandSolder"
 			(at 161.29 35.56 0)
 			(effects
 				(font
@@ -9868,7 +9997,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-563"
 			(at 113.03 39.37 0)
 			(effects
 				(font

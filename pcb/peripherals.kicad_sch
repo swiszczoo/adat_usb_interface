@@ -4582,6 +4582,16 @@
 		)
 		(uuid "c7270e6d-1780-424e-847d-aad70c158825")
 	)
+	(text "C7501191"
+		(exclude_from_sim no)
+		(at 245.364 63.246 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "dc36f8ca-4a41-4002-96c1-75cc5a48d28a")
+	)
 	(text "IDC connectors"
 		(exclude_from_sim no)
 		(at 236.474 21.844 0)
@@ -6974,7 +6984,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm_HandSoldering"
 			(at 62.23 156.21 0)
 			(effects
 				(font

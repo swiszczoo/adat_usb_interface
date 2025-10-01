@@ -1,4 +1,4 @@
-26426242997406941
+26431520825088960
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -105602,6 +105602,20 @@ Varistor VF
 2
 2
 adatv2
+BNC_dosinconn_DOSIN-801-0051
+
+
+0
+5
+2
+adatv2
+CUI PJ-002A
+
+
+0
+3
+3
+adatv2
 LED_THT_W7.0mm_H2.00mm
 
 
@@ -105615,3 +105629,10 @@ PLx237
 0
 5
 5
+adatv2
+Samtec-FTSH-107-01-L-DV-K
+
+
+0
+14
+14

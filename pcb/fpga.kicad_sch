@@ -4528,6 +4528,16 @@
 		)
 		(uuid "71b31d4c-878a-44ff-bd76-ceff70e1a786")
 	)
+	(text "C5605"
+		(exclude_from_sim no)
+		(at 84.328 51.054 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "bb90451d-2e39-4db5-a83d-e18672f98a49")
+	)
 	(text "Unused inverters"
 		(exclude_from_sim no)
 		(at 227.584 139.446 0)
@@ -6891,7 +6901,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 241.3 153.67 0)
 			(effects
 				(font
@@ -7470,7 +7480,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 264.16 153.67 0)
 			(effects
 				(font
@@ -7906,7 +7916,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 218.44 153.67 0)
 			(effects
 				(font
@@ -8010,7 +8020,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 63.5 44.45 0)
 			(effects
 				(font
@@ -8113,7 +8123,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm_HandSoldering"
 			(at 39.37 38.1 0)
 			(effects
 				(font
@@ -8386,7 +8396,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 83.82 44.45 0)
 			(effects
 				(font
@@ -8831,7 +8841,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 194.31 153.67 0)
 			(effects
 				(font

@@ -9423,7 +9423,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6_Handsoldering"
 			(at 58.42 175.26 0)
 			(effects
 				(font
@@ -9575,7 +9575,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
 			(at 44.45 135.89 0)
 			(effects
 				(font
@@ -11110,7 +11110,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6_Handsoldering"
 			(at 116.84 135.89 0)
 			(effects
 				(font
@@ -12280,7 +12280,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6_Handsoldering"
 			(at 78.74 135.89 0)
 			(effects
 				(font
@@ -13117,7 +13117,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-6_Handsoldering"
 			(at 96.52 175.26 0)
 			(effects
 				(font

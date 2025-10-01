@@ -3346,6 +3346,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "C3040705"
+		(exclude_from_sim no)
+		(at 70.866 178.816 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "3af5c437-f450-4ce7-a3d3-eb2dfeb1a5cc")
+	)
 	(text "Status LEDs"
 		(exclude_from_sim no)
 		(at 171.958 165.354 90)
@@ -3378,6 +3388,17 @@
 			)
 		)
 		(uuid "a4a13ffe-b16f-45e4-9e37-e1ca72627795")
+	)
+	(text "C5148424"
+		(exclude_from_sim no)
+		(at 27.94 102.87 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b629077a-0dda-4e14-bdaf-e3228a914ad3")
 	)
 	(text "must be powered from the 5V rail,\nplace level converter on the main board"
 		(exclude_from_sim no)
@@ -16100,7 +16121,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_CK_PTS125Sx43SMTR"
 			(at 33.02 80.01 0)
 			(effects
 				(font
@@ -18115,7 +18136,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_NO_CK_PTS125Sx43SMTR"
 			(at 33.02 93.98 0)
 			(effects
 				(font
