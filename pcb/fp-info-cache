@@ -1,4 +1,4 @@
-26431520855257170
+26433280411603809
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -105615,6 +105615,13 @@ CUI PJ-002A
 0
 3
 3
+adatv2
+LED_10bar
+
+
+0
+20
+20
 adatv2
 LED_THT_W7.0mm_H2.00mm
 
