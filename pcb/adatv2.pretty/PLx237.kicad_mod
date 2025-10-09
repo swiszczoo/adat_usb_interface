@@ -53,7 +53,7 @@
 			)
 		)
 	)
-	(attr smd)
+	(attr through_hole)
 	(fp_line
 		(start -4.7 -2.1)
 		(end -4.7 2.1)
@@ -149,4 +149,15 @@
 		(uuid "606205b0-9a97-4f91-b8c2-cbd2c012bc79")
 	)
 	(embedded_fonts no)
+	(model "../../cad/step/PLx237.step"
+		(offset
+			(xyz 4.9 6.9 10)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -180)
+		)
+	)
 )

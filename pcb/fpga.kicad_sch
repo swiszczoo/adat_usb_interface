@@ -7105,7 +7105,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_QFP:EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm_ThermalVias"
+		(property "Footprint" "adatv2:EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm"
 			(at 42.418 109.728 0)
 			(effects
 				(font
@@ -7602,7 +7602,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_QFP:EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm_ThermalVias"
+		(property "Footprint" "adatv2:EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm"
 			(at 169.418 51.308 0)
 			(effects
 				(font
@@ -8099,7 +8099,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_QFP:EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm_ThermalVias"
+		(property "Footprint" "adatv2:EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm"
 			(at 43.688 56.388 0)
 			(effects
 				(font
@@ -8596,7 +8596,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_QFP:EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm_ThermalVias"
+		(property "Footprint" "adatv2:EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm"
 			(at 231.902 -5.842 0)
 			(effects
 				(font
@@ -9093,7 +9093,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_QFP:EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm_ThermalVias"
+		(property "Footprint" "adatv2:EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm"
 			(at 114.808 67.818 0)
 			(effects
 				(font
@@ -9590,7 +9590,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_QFP:EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm_ThermalVias"
+		(property "Footprint" "adatv2:EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm"
 			(at 227.838 55.118 0)
 			(effects
 				(font

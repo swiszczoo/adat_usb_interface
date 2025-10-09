@@ -1,4 +1,4 @@
-26433280411665669
+26435044479044280
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -105615,6 +105615,13 @@ CUI PJ-002A
 0
 3
 3
+adatv2
+EQFP-144-1EP_20x20mm_P0.5mm_EP4x4mm
+EQFP, 144 Pin (https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/packaging/04r00482-02.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+EQFP QFP
+0
+154
+145
 adatv2
 LED_10bar
 
