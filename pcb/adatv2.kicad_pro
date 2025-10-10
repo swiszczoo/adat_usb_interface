@@ -500,12 +500,22 @@
         "wire_width": 6
       },
       {
+        "clearance": 0.2,
+        "name": "50OhmSE",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgb(152, 89, 118)",
+        "track_width": 0.34925,
+        "via_diameter": 0.6,
+        "via_drill": 0.3
+      },
+      {
         "bus_width": 12,
         "clearance": 0.5,
         "line_style": 0,
         "name": "75OhmSE",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 2,
+        "priority": 3,
         "schematic_color": "rgb(75, 0, 255)",
         "track_width": 0.134874,
         "wire_width": 6
@@ -518,7 +528,7 @@
         "microvia_drill": 0.1,
         "name": "90OhmDP",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
+        "priority": 1,
         "schematic_color": "rgb(205, 125, 0)",
         "via_diameter": 0.6,
         "via_drill": 0.3,
@@ -530,7 +540,7 @@
         "line_style": 0,
         "name": "PowerNet",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 1,
+        "priority": 2,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.6,
         "via_diameter": 1.0,
@@ -563,6 +573,10 @@
       {
         "netclass": "90OhmDP",
         "pattern": "USB_D*"
+      },
+      {
+        "netclass": "50OhmSE",
+        "pattern": "*ULPI_*"
       }
     ]
   },
