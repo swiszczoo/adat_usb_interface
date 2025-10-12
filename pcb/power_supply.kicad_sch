@@ -4597,7 +4597,7 @@
 	)
 	(text "FPGA power supply"
 		(exclude_from_sim no)
-		(at 232.918 91.44 0)
+		(at 232.918 90.17 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -9024,71 +9024,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 74.93 116.84 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "08daae99-00bb-4fd0-9025-c3f6e9c1729a")
-		(property "Reference" "#PWR0112"
-			(at 74.93 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 74.93 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 74.93 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 74.93 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 74.93 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1681cebd-2a83-4f9e-87b9-a7efa2a716f1")
-		)
-		(instances
-			(project "adatv2"
-				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/60796416-9670-44ee-b184-e89641e8a32b"
-					(reference "#PWR0112")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 101.6 73.66 180)
 		(unit 1)
@@ -9106,7 +9041,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "150"
 			(at 99.822 74.93 0)
 			(effects
 				(font
@@ -10214,71 +10149,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 36.83 158.75 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "31bb5e1b-3aad-47e9-ba22-db9a4b0e388e")
-		(property "Reference" "#PWR0116"
-			(at 36.83 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 36.83 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 36.83 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 36.83 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 36.83 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4b918d38-4064-4667-bd30-a80b145e9484")
-		)
-		(instances
-			(project "adatv2"
-				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/60796416-9670-44ee-b184-e89641e8a32b"
-					(reference "#PWR0116")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
 		(at 148.59 171.45 0)
 		(unit 1)
@@ -10339,6 +10209,72 @@
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/60796416-9670-44ee-b184-e89641e8a32b"
 					(reference "#PWR0120")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 74.93 116.84 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "358a1f86-6a35-4ab3-8b9c-feb9d30be875")
+		(property "Reference" "#PWR0112"
+			(at 74.93 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 74.93 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 74.93 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 74.93 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 74.93 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1f399d72-e9e5-4f34-a49c-b58a37f4e925")
+		)
+		(instances
+			(project "adatv2"
+				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/60796416-9670-44ee-b184-e89641e8a32b"
+					(reference "#PWR0112")
 					(unit 1)
 				)
 			)
@@ -10680,71 +10616,6 @@
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/60796416-9670-44ee-b184-e89641e8a32b"
 					(reference "C107")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 36.83 116.84 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "52298d04-7ec8-4cc8-9ea7-d0d264c06733")
-		(property "Reference" "#PWR0111"
-			(at 36.83 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 36.83 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 36.83 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 36.83 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 36.83 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d8a967bd-ecd9-4db1-84da-b5df219f83a8")
-		)
-		(instances
-			(project "adatv2"
-				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/60796416-9670-44ee-b184-e89641e8a32b"
-					(reference "#PWR0111")
 					(unit 1)
 				)
 			)
@@ -13041,6 +12912,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 36.83 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "98995313-e29b-4625-a9cf-7cbcb1504206")
+		(property "Reference" "#PWR0116"
+			(at 36.83 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 36.83 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 36.83 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 36.83 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 36.83 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a6e7d6fd-ca22-4c54-979a-62065b8966be")
+		)
+		(instances
+			(project "adatv2"
+				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/60796416-9670-44ee-b184-e89641e8a32b"
+					(reference "#PWR0116")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 26.67 132.08 0)
 		(unit 1)
@@ -13451,6 +13388,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 74.93 158.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ae360073-8f59-47e3-94b2-304df4ab23d7")
+		(property "Reference" "#PWR0117"
+			(at 74.93 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 74.93 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 74.93 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 74.93 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 74.93 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "66159fe3-e2f6-40d7-a31c-54eb50b92556")
+		)
+		(instances
+			(project "adatv2"
+				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/60796416-9670-44ee-b184-e89641e8a32b"
+					(reference "#PWR0117")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 135.89 121.92 0)
 		(mirror y)
@@ -13469,7 +13472,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "10n"
 			(at 136.398 124.46 0)
 			(effects
 				(font
@@ -13921,22 +13924,22 @@
 			)
 		)
 		(pin "4"
-			(uuid "e526b1c1-b8ff-4a68-bb8e-12ff864ab269")
+			(uuid "e526b1c1-b8ff-4a68-bb8e-12ff864ab26a")
 		)
 		(pin "5"
 			(uuid "33b82a8d-eb23-4c29-84ad-803791b0b285")
 		)
 		(pin "1"
-			(uuid "4c926365-48b0-40bb-a117-36e6c3d06511")
+			(uuid "4c926365-48b0-40bb-a117-36e6c3d06512")
 		)
 		(pin "2"
 			(uuid "dfc4beb4-87e0-4bc6-8280-ce5cbbbc3162")
 		)
 		(pin "3"
-			(uuid "5f3a0d4b-aa08-47ab-8701-31ca50dd54f6")
+			(uuid "5f3a0d4b-aa08-47ab-8701-31ca50dd54f7")
 		)
 		(pin "6"
-			(uuid "52f73f37-88e8-4bb0-a513-8d7ed57240d4")
+			(uuid "52f73f37-88e8-4bb0-a513-8d7ed57240d5")
 		)
 		(instances
 			(project "adatv2"
@@ -14353,71 +14356,6 @@
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/60796416-9670-44ee-b184-e89641e8a32b"
 					(reference "C156")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 74.93 158.75 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "cb6ceff3-c2ab-4581-a3e1-8cd1d52287e6")
-		(property "Reference" "#PWR0117"
-			(at 74.93 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 74.93 153.67 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 74.93 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 74.93 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 74.93 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f02c60f0-2c68-42e1-b791-b9ecd58fce34")
-		)
-		(instances
-			(project "adatv2"
-				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/60796416-9670-44ee-b184-e89641e8a32b"
-					(reference "#PWR0117")
 					(unit 1)
 				)
 			)
@@ -14921,7 +14859,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "150"
 			(at 108.458 74.93 0)
 			(effects
 				(font
@@ -15432,28 +15370,94 @@
 			)
 		)
 		(pin "4"
-			(uuid "e526b1c1-b8ff-4a68-bb8e-12ff864ab269")
+			(uuid "e526b1c1-b8ff-4a68-bb8e-12ff864ab26b")
 		)
 		(pin "5"
 			(uuid "05218397-c0c4-4c72-ae21-06f4f9e888f4")
 		)
 		(pin "1"
-			(uuid "4c926365-48b0-40bb-a117-36e6c3d06511")
+			(uuid "4c926365-48b0-40bb-a117-36e6c3d06513")
 		)
 		(pin "2"
 			(uuid "e7a11c73-bf69-4bee-b38b-e26c2a3e5e69")
 		)
 		(pin "3"
-			(uuid "5f3a0d4b-aa08-47ab-8701-31ca50dd54f6")
+			(uuid "5f3a0d4b-aa08-47ab-8701-31ca50dd54f8")
 		)
 		(pin "6"
-			(uuid "52f73f37-88e8-4bb0-a513-8d7ed57240d4")
+			(uuid "52f73f37-88e8-4bb0-a513-8d7ed57240d6")
 		)
 		(instances
 			(project "adatv2"
 				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/60796416-9670-44ee-b184-e89641e8a32b"
 					(reference "U109")
 					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 36.83 116.84 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f693d443-f3e9-442c-99ba-d539b4146387")
+		(property "Reference" "#PWR0111"
+			(at 36.83 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 36.83 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 36.83 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 36.83 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 36.83 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "812f4743-00e4-4c84-a1eb-5da48c485f92")
+		)
+		(instances
+			(project "adatv2"
+				(path "/81929cdc-f9fd-4c47-8b7e-bc8597104756/60796416-9670-44ee-b184-e89641e8a32b"
+					(reference "#PWR0111")
+					(unit 1)
 				)
 			)
 		)

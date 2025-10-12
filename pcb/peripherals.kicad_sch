@@ -7996,7 +7996,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "15pF"
+		(property "Value" "15p"
 			(at 81.026 166.37 0)
 			(effects
 				(font
@@ -9423,7 +9423,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "15pF"
+		(property "Value" "15p"
 			(at 94.234 166.37 0)
 			(effects
 				(font

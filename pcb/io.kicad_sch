@@ -5079,7 +5079,7 @@
 				)
 			)
 		)
-		(property "Value" "150"
+		(property "Value" "20"
 			(at 205.74 110.49 90)
 			(effects
 				(font
@@ -5146,7 +5146,7 @@
 				)
 			)
 		)
-		(property "Value" "150"
+		(property "Value" "20"
 			(at 205.74 34.29 90)
 			(effects
 				(font
@@ -5213,7 +5213,7 @@
 				)
 			)
 		)
-		(property "Value" "150"
+		(property "Value" "20"
 			(at 205.74 46.99 90)
 			(effects
 				(font
@@ -5574,7 +5574,7 @@
 				)
 			)
 		)
-		(property "Value" "150"
+		(property "Value" "20"
 			(at 205.74 72.39 90)
 			(effects
 				(font
@@ -5707,7 +5707,7 @@
 				)
 			)
 		)
-		(property "Value" "150"
+		(property "Value" "20"
 			(at 205.74 135.89 90)
 			(effects
 				(font
@@ -5922,7 +5922,7 @@
 				)
 			)
 		)
-		(property "Value" "150"
+		(property "Value" "20"
 			(at 205.74 59.69 90)
 			(effects
 				(font
@@ -6028,19 +6028,19 @@
 			(uuid "366968ea-8b62-422a-be93-dc41d37040e5")
 		)
 		(pin "5"
-			(uuid "53799ed5-4fca-426f-9c53-6f42286ce7c6")
+			(uuid "53799ed5-4fca-426f-9c53-6f42286ce7c7")
 		)
 		(pin "1"
-			(uuid "4c926365-48b0-40bb-a117-36e6c3d06512")
+			(uuid "4c926365-48b0-40bb-a117-36e6c3d06513")
 		)
 		(pin "2"
-			(uuid "68d2270a-8daa-442b-bbe4-7e258f2756a7")
+			(uuid "68d2270a-8daa-442b-bbe4-7e258f2756a8")
 		)
 		(pin "3"
 			(uuid "e25d22fa-0482-4a2b-a3d3-8fdaa40ca521")
 		)
 		(pin "6"
-			(uuid "52f73f37-88e8-4bb0-a513-8d7ed57240d5")
+			(uuid "52f73f37-88e8-4bb0-a513-8d7ed57240d6")
 		)
 		(instances
 			(project "adatv2"
@@ -6672,7 +6672,7 @@
 				)
 			)
 		)
-		(property "Value" "150"
+		(property "Value" "20"
 			(at 205.74 97.79 90)
 			(effects
 				(font
@@ -6988,7 +6988,7 @@
 			)
 		)
 		(pin "4"
-			(uuid "e526b1c1-b8ff-4a68-bb8e-12ff864ab269")
+			(uuid "e526b1c1-b8ff-4a68-bb8e-12ff864ab26a")
 		)
 		(pin "5"
 			(uuid "5c3feeed-87bf-4717-b5fe-368f6bef7787")
@@ -7000,7 +7000,7 @@
 			(uuid "7124e20e-6c4d-4633-a105-1adce93a2545")
 		)
 		(pin "3"
-			(uuid "5f3a0d4b-aa08-47ab-8701-31ca50dd54f6")
+			(uuid "5f3a0d4b-aa08-47ab-8701-31ca50dd54f7")
 		)
 		(pin "6"
 			(uuid "723f111f-7e70-452d-82ad-56c360d06b5e")
@@ -7345,19 +7345,19 @@
 			)
 		)
 		(pin "4"
-			(uuid "e526b1c1-b8ff-4a68-bb8e-12ff864ab269")
+			(uuid "e526b1c1-b8ff-4a68-bb8e-12ff864ab26b")
 		)
 		(pin "5"
-			(uuid "53799ed5-4fca-426f-9c53-6f42286ce7c5")
+			(uuid "53799ed5-4fca-426f-9c53-6f42286ce7c8")
 		)
 		(pin "1"
 			(uuid "28492d5f-58ae-4ec7-b819-82989699994e")
 		)
 		(pin "2"
-			(uuid "68d2270a-8daa-442b-bbe4-7e258f2756a6")
+			(uuid "68d2270a-8daa-442b-bbe4-7e258f2756a9")
 		)
 		(pin "3"
-			(uuid "5f3a0d4b-aa08-47ab-8701-31ca50dd54f6")
+			(uuid "5f3a0d4b-aa08-47ab-8701-31ca50dd54f8")
 		)
 		(pin "6"
 			(uuid "3fa84d3d-afc3-4d8a-9821-9bf377cacdf6")
@@ -7547,7 +7547,7 @@
 				)
 			)
 		)
-		(property "Value" "150"
+		(property "Value" "20"
 			(at 205.74 123.19 90)
 			(effects
 				(font
@@ -8179,7 +8179,7 @@
 			(uuid "5c3feeed-87bf-4717-b5fe-368f6bef7789")
 		)
 		(pin "1"
-			(uuid "4c926365-48b0-40bb-a117-36e6c3d06512")
+			(uuid "4c926365-48b0-40bb-a117-36e6c3d06514")
 		)
 		(pin "2"
 			(uuid "7124e20e-6c4d-4633-a105-1adce93a2547")
@@ -8188,7 +8188,7 @@
 			(uuid "b4a2b458-cd78-4f6e-9981-c28d27ef376c")
 		)
 		(pin "6"
-			(uuid "52f73f37-88e8-4bb0-a513-8d7ed57240d5")
+			(uuid "52f73f37-88e8-4bb0-a513-8d7ed57240d7")
 		)
 		(instances
 			(project "adatv2"
@@ -8660,7 +8660,7 @@
 			)
 		)
 		(pin "4"
-			(uuid "e526b1c1-b8ff-4a68-bb8e-12ff864ab26a")
+			(uuid "e526b1c1-b8ff-4a68-bb8e-12ff864ab26c")
 		)
 		(pin "5"
 			(uuid "5c3feeed-87bf-4717-b5fe-368f6bef778a")
@@ -8672,7 +8672,7 @@
 			(uuid "7124e20e-6c4d-4633-a105-1adce93a2548")
 		)
 		(pin "3"
-			(uuid "5f3a0d4b-aa08-47ab-8701-31ca50dd54f7")
+			(uuid "5f3a0d4b-aa08-47ab-8701-31ca50dd54f9")
 		)
 		(pin "6"
 			(uuid "5bc95f97-4be8-4474-a5e6-6696a93c57f3")

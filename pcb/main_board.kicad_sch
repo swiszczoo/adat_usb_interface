@@ -3557,13 +3557,14 @@
 		)
 		(uuid "ad468caa-d9e1-4a70-a134-c03c048de884")
 	)
-	(text "C117815"
+	(text "C95447"
 		(exclude_from_sim no)
-		(at 101.6 185.42 0)
+		(at 97.282 185.674 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
+			(justify left)
 		)
 		(uuid "dc1233af-0e49-413c-9510-a67628964b07")
 	)
@@ -8948,7 +8949,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "STM32F427VGTx"
+		(property "Value" "STM32F429VET6"
 			(at 97.3933 182.88 0)
 			(effects
 				(font
