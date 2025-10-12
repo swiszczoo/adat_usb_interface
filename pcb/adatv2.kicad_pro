@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.17,
         "silk_text_upright": true,
         "zones": {
-          "min_clearance": 0.3
+          "min_clearance": 0.25
         }
       },
       "diff_pair_dimensions": [
@@ -466,6 +466,7 @@
       "single_global_label": "warning",
       "unannotated": "error",
       "unconnected_wire_endpoint": "warning",
+      "undefined_netclass": "error",
       "unit_value_mismatch": "error",
       "unresolved_variable": "error",
       "wire_dangling": "error"
