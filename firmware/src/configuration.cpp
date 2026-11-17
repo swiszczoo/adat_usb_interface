@@ -83,4 +83,12 @@ void USB_Config()
         LL_GPIO_SetPinSpeed(pin.port, pin.pin, LL_GPIO_SPEED_FREQ_VERY_HIGH);
         LL_GPIO_SetPinPull(pin.port, pin.pin, LL_GPIO_PULL_NO);
     }
+
+    NVIC_EnableIRQ(OTG_HS_IRQn);
+    NVIC_SetPriority(OTG_HS_IRQn, 5);
+
+    LL_GPIO_SetPinMode(Pins::USB_RESET.port, Pins::USB_RESET.pin, LL_GPIO_MODE_OUTPUT);
+    LL_GPIO_SetPinOutputType(Pins::USB_RESET.port, 
+        Pins::USB_RESET.pin, LL_GPIO_OUTPUT_PUSHPULL);
+    LL_GPIO_ResetOutputPin(Pins::USB_RESET.port, Pins::USB_RESET.pin);
 }

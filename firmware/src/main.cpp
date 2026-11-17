@@ -1,38 +1,55 @@
 #include "configuration.hpp"
+#include "tusb_config.h"
 
 #include <stm32f4xx_ll_bus.h>
+#include <stm32f4xx_hal_cortex.h>
 #include <stm32f4xx_ll_gpio.h>
 #include <stm32f4xx_ll_utils.h>
 
 #include <FreeRTOS.h>
 #include <task.h>
+#include <tusb.h>
+
+void vApplicationStackOverflowHook(TaskHandle_t pxTask, char* pcTaskName)
+{
+    assert(false);
+}
 
 void gownoEntry(void*)
 {
-    LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOE);
+    tusb_rhport_init_t dev_init = {
+        .role = TUSB_ROLE_DEVICE,
+        .speed = TUSB_SPEED_HIGH
+    };
+    tusb_init(BOARD_TUD_RHPORT, &dev_init);
 
-    LL_GPIO_SetPinMode(GPIOE, LL_GPIO_PIN_0, LL_GPIO_MODE_OUTPUT);
-    LL_GPIO_SetPinOutputType(GPIOE, LL_GPIO_PIN_0, LL_GPIO_OUTPUT_PUSHPULL);
-
-    while (1) {
-        LL_GPIO_TogglePin(GPIOE, LL_GPIO_PIN_0);
-
-        for (volatile int i = 0; i < 500000; ++i) {}
+    while (true) {
+        tud_task();
     }
+}
+
+extern "C" void HardFault_Handler()
+{
+    while (true) {}
+}
+
+extern "C" void OTG_HS_IRQHandler()
+{
+    tud_int_handler(BOARD_TUD_RHPORT);
 }
 
 int main()
 {
+    NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
     SystemClock_Config();
     USB_Config();
 
-    StaticTask_t gowno;
-    StackType_t gownoStack[128];
-    xTaskCreateStatic(gownoEntry, "gowno", 
-        128, nullptr, 
+    static StaticTask_t gowno;
+    static StackType_t gownoStack[1024];
+    xTaskCreateStatic(gownoEntry, "gowno",
+        1024, nullptr,
         configMAX_PRIORITIES - 1, gownoStack, &gowno);
 
-    xPortStartScheduler();
-
+    vTaskStartScheduler();
     return 0;
 }

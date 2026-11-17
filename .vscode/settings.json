@@ -4,5 +4,6 @@
   "clangd.arguments": [
     "--query-driver=**/arm-none-eabi-g*",
     "--header-insertion=never"
-  ]
+],
+"cortex-debug.variableUseNaturalFormat": false
 }
