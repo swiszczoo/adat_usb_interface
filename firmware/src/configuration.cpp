@@ -87,8 +87,13 @@ void USB_Config()
     NVIC_EnableIRQ(OTG_HS_IRQn);
     NVIC_SetPriority(OTG_HS_IRQn, 5);
 
-    LL_GPIO_SetPinMode(Pins::USB_RESET.port, Pins::USB_RESET.pin, LL_GPIO_MODE_OUTPUT);
-    LL_GPIO_SetPinOutputType(Pins::USB_RESET.port, 
-        Pins::USB_RESET.pin, LL_GPIO_OUTPUT_PUSHPULL);
-    LL_GPIO_ResetOutputPin(Pins::USB_RESET.port, Pins::USB_RESET.pin);
+    //LL_GPIO_SetPinMode(Pins::USB_RESET.port, Pins::USB_RESET.pin, LL_GPIO_MODE_OUTPUT);
+    //LL_GPIO_SetPinOutputType(Pins::USB_RESET.port, 
+    //    Pins::USB_RESET.pin, LL_GPIO_OUTPUT_PUSHPULL);
+    //LL_GPIO_ResetOutputPin(Pins::USB_RESET.port, Pins::USB_RESET.pin);
+
+    LL_GPIO_SetPinMode(Pins::MCO1.port, Pins::MCO1.pin, LL_GPIO_MODE_ALTERNATE);
+    LL_GPIO_SetPinOutputType(Pins::MCO1.port, Pins::MCO1.pin, LL_GPIO_OUTPUT_PUSHPULL);
+    LL_GPIO_SetAFPin_8_15(Pins::MCO1.port, Pins::MCO1.pin, LL_GPIO_AF_0);
+    LL_GPIO_SetPinSpeed(Pins::MCO1.port, Pins::MCO1.pin, LL_GPIO_SPEED_FREQ_VERY_HIGH);
 }

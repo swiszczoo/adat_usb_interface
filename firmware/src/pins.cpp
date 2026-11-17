@@ -15,5 +15,6 @@ const Pin ULPI_DIR = { GPIOC, LL_GPIO_PIN_2 };
 const Pin ULPI_STP = { GPIOC, LL_GPIO_PIN_0 };
 const Pin ULPI_CLK = { GPIOA, LL_GPIO_PIN_5 };
 const Pin USB_RESET = { GPIOA, LL_GPIO_PIN_6 };
+const Pin MCO1 = { GPIOA, LL_GPIO_PIN_8 };
 
 }

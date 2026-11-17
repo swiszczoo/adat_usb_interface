@@ -22,5 +22,6 @@ extern const Pin ULPI_DIR;
 extern const Pin ULPI_STP;
 extern const Pin ULPI_CLK;
 extern const Pin USB_RESET;
+extern const Pin MCO1;
 
 }
