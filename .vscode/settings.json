@@ -1,0 +1,4 @@
+{
+  "cmake.sourceDirectory": "${workspaceFolder}/firmware",
+  "editor.tabSize": 4
+}

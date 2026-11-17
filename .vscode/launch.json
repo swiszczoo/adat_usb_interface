@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "firmware/build/debug/adat_usb_interface.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "breakAfterReset": false,
+            "configFiles": [
+                "firmware/openocd.cfg",
+            ],
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 5
+            },
+            "serverArgs": [ "-c gdb_breakpoint_override hard"],
+            "svdFile": "firmware/svd/STM32F429.svd"
+        }
+    ]
+}
