@@ -24,6 +24,7 @@ void gownoEntry(void*)
 int main()
 {
     SystemClock_Config();
+    USB_Config();
 
     StaticTask_t gowno;
     StackType_t gownoStack[128];

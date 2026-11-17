@@ -1,4 +1,4 @@
 CompileFlags:
     CompilationDatabase: firmware/build/debug
-    Compiler: arm-none-eabi-gcc
+    Compiler: arm-none-eabi-g++
     Add: [-xc++-header, -std=c++20]

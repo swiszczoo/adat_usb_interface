@@ -1,4 +1,8 @@
 {
   "cmake.sourceDirectory": "${workspaceFolder}/firmware",
-  "editor.tabSize": 4
+  "editor.tabSize": 4,
+  "clangd.arguments": [
+    "--query-driver=**/arm-none-eabi-g*",
+    "--header-insertion=never"
+  ]
 }
