@@ -64,6 +64,7 @@ enum class Category : uint8_t {
 
 // Standard USB descriptor types used by audio
 enum class StdDescriptorType : uint8_t {
+    Configuration = 0x02,
     Interface = 0x04,
     Endpoint = 0x05,
     InterfaceAssociation = 0x0B,
@@ -297,11 +298,38 @@ enum class LockDelayUnits : uint8_t {
     DecodedPcmSamples = 2,
 };
 
+// USB 2.0 Table 9-10 configuration bmAttributes (bit 7 is reserved, must be 1)
+enum ConfigAttr : uint8_t {
+    CONFIG_ATTR_RESERVED_ONE = 1u << 7,
+    CONFIG_ATTR_SELF_POWERED = 1u << 6,
+    CONFIG_ATTR_REMOTE_WAKEUP = 1u << 5,
+};
+
+// bMaxPower is in units of 2 mA (high-speed and full-speed)
+constexpr uint8_t maxPowerMilliamps(unsigned mA) {
+    return static_cast<uint8_t>(mA / 2);
+}
+
 //--------------------------------------------------------------------+
 // Descriptor structures
 //--------------------------------------------------------------------+
 
 #pragma pack(push, 1)
+
+// Standard USB Configuration Descriptor (USB 2.0 Table 9-10, 9 bytes)
+// wTotalLength = this header + everything that follows in the configuration
+// (IADs, interfaces, class-specific and endpoint descriptors).
+struct ConfigurationDescriptor {
+    uint8_t bLength = sizeof(ConfigurationDescriptor);
+    StdDescriptorType bDescriptorType = StdDescriptorType::Configuration;
+    uint16_t wTotalLength;
+    uint8_t bNumInterfaces;
+    uint8_t bConfigurationValue = 1;
+    uint8_t iConfiguration = 0;
+    uint8_t bmAttributes = CONFIG_ATTR_RESERVED_ONE;  // ConfigAttr bits
+    uint8_t bMaxPower;  // maxPowerMilliamps()
+};
+static_assert(sizeof(ConfigurationDescriptor) == 9);
 
 // Table 4-3 Standard Interface Association Descriptor (8 bytes)
 struct InterfaceAssociationDescriptor {
