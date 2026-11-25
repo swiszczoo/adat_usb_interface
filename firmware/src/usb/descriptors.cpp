@@ -110,7 +110,7 @@ enum InterfaceNumber : uint8_t {
 
 
 enum EntityNumber : uint8_t {
-    EN_CLK48 = 0,
+    EN_CLK48 = 1,
     EN_CLK44,
     EN_CLOCK_SELECTOR,
     EN_OUT_INPUT_TERMINAL,
@@ -144,7 +144,7 @@ const AudioInterfaceConfigurationDescriptor DESC_HS_CONFIGURATION = {
     .cd = {
         .wTotalLength = sizeof(DESC_HS_CONFIGURATION),
         .bNumInterfaces = InterfaceNumber::ITF_NUM_TOTAL,
-        .bmAttributes = uac2::ConfigAttr::CONFIG_ATTR_SELF_POWERED,
+        .bmAttributes = uac2::ConfigAttr::CONFIG_ATTR_RESERVED_ONE | uac2::ConfigAttr::CONFIG_ATTR_SELF_POWERED,
         .bMaxPower = uac2::maxPowerMilliamps(500),
     },
     .iad = {
@@ -167,14 +167,14 @@ const AudioInterfaceConfigurationDescriptor DESC_HS_CONFIGURATION = {
         .csd48 = {
             .bClockID = EntityNumber::EN_CLK48,
             .bmAttributes = uac2::ClockAttr::CLOCK_INTERNAL_FIXED,
-            .bmControls = 0,
+            .bmControls = uac2::clockSourceControls(uac2::Ctrl::ReadOnly, uac2::Ctrl::ReadOnly),
             .bAssocTerminal = 0, // internal clock
             .iClockSource = 0,
         },
         .csd44 = {
             .bClockID = EntityNumber::EN_CLK44,
             .bmAttributes = uac2::ClockAttr::CLOCK_INTERNAL_FIXED,
-            .bmControls = 0,
+            .bmControls = uac2::clockSourceControls(uac2::Ctrl::ReadOnly, uac2::Ctrl::ReadOnly),
             .bAssocTerminal = 0, // internal clock
             .iClockSource = 0,
         },
