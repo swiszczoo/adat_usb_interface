@@ -25,10 +25,14 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include <signal.h>
 #include <time.h>
 #include <sys/time.h>
 #include <sys/times.h>
+
+#include <FreeRTOS.h>
+#include <task.h>
 
 
 /* Variables */
@@ -173,6 +177,11 @@ int _execve(char *name, char **argv, char **env)
   (void)env;
   errno = ENOMEM;
   return -1;
+}
+
+void vApplicationStackOverflowHook(TaskHandle_t pxTask, char* pcTaskName)
+{
+    assert(false);
 }
 
 // --- Picolibc Specific Section ---

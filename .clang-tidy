@@ -1,5 +1,5 @@
 
-Checks:          'clang-diagnostic-*,clang-analyzer-*,cppcoreguidelines-*,modernize-*,-modernize-use-trailing-return-type,-clang-diagnostic-c++17-attribute-extensions,-cppcoreguidelines-pro-type-reinterpret-cast,-cppcoreguidelines-avoid-c-arrays,-modernize-avoid-c-arrays,-cppcoreguidelines-owning-memory'
+Checks:          'clang-diagnostic-*,clang-analyzer-*,cppcoreguidelines-*,modernize-*,-modernize-use-trailing-return-type,-clang-diagnostic-c++17-attribute-extensions,-cppcoreguidelines-pro-type-reinterpret-cast,-cppcoreguidelines-avoid-c-arrays,-modernize-avoid-c-arrays,-cppcoreguidelines-owning-memory,-cppcoreguidelines-avoid-magic-numbers'
 WarningsAsErrors: true
 HeaderFilterRegex: ''
 FormatStyle:     webkit

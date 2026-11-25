@@ -1,6 +1,7 @@
 #include "pins.hpp"
 
 #include <stm32f4xx_ll_bus.h>
+#include <stm32f4xx_hal_cortex.h>
 #include <stm32f4xx_ll_pwr.h>
 #include <stm32f4xx_ll_rcc.h>
 #include <stm32f4xx_ll_system.h>
@@ -8,7 +9,7 @@
 
 #include <array>
 
-void SystemClock_Config()
+static void SystemClock_Config()
 {
     LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_SYSCFG);
     LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_PWR);
@@ -47,7 +48,7 @@ void SystemClock_Config()
     LL_RCC_SetTIMPrescaler(LL_RCC_TIM_PRESCALER_TWICE);
 }
 
-void USB_Config()
+static void USB_Config()
 {
     static const std::array<const Pin, 12> USB_PINS = {
         Pins::ULPI_D0,
@@ -87,13 +88,16 @@ void USB_Config()
     NVIC_EnableIRQ(OTG_HS_IRQn);
     NVIC_SetPriority(OTG_HS_IRQn, 5);
 
-    //LL_GPIO_SetPinMode(Pins::USB_RESET.port, Pins::USB_RESET.pin, LL_GPIO_MODE_OUTPUT);
-    //LL_GPIO_SetPinOutputType(Pins::USB_RESET.port, 
-    //    Pins::USB_RESET.pin, LL_GPIO_OUTPUT_PUSHPULL);
-    //LL_GPIO_ResetOutputPin(Pins::USB_RESET.port, Pins::USB_RESET.pin);
-
     LL_GPIO_SetPinMode(Pins::MCO1.port, Pins::MCO1.pin, LL_GPIO_MODE_ALTERNATE);
     LL_GPIO_SetPinOutputType(Pins::MCO1.port, Pins::MCO1.pin, LL_GPIO_OUTPUT_PUSHPULL);
     LL_GPIO_SetAFPin_8_15(Pins::MCO1.port, Pins::MCO1.pin, LL_GPIO_AF_0);
     LL_GPIO_SetPinSpeed(Pins::MCO1.port, Pins::MCO1.pin, LL_GPIO_SPEED_FREQ_VERY_HIGH);
+}
+
+void HardwareInit()
+{
+    NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_4);
+    
+    SystemClock_Config();
+    USB_Config();
 }

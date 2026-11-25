@@ -28,6 +28,14 @@ enum StringIndex : uint8_t {
     STRID_COUNT,
 };
 
+constexpr std::array<std::string_view, STRID_COUNT> STRINGS = {
+    "", // 0: language id, handled separately
+    "swiszczoo",
+    "ADAT USB Interface",
+    "", // 3: serial, generated from chip UID
+    "Debug CDC",
+};
+
 const tusb_desc_device_t DESC_DEVICE = {
     .bLength = sizeof(tusb_desc_device_t),
     .bDescriptorType = TUSB_DESC_DEVICE,
@@ -69,24 +77,17 @@ constexpr uint16_t CONFIG_TOTAL_LEN = TUD_CONFIG_DESC_LEN + TUD_CDC_DESC_LEN;
 // Full speed configuration
 const uint8_t DESC_FS_CONFIGURATION[] = {
     // config number, interface count, string index, total length, attributes, power (mA)
-    TUD_CONFIG_DESCRIPTOR(1, ITF_NUM_TOTAL, 0, CONFIG_TOTAL_LEN, 0x00, 100),
-
-    // interface number, string index, notif EP, notif EP size, EP OUT, EP IN, EP size
-    TUD_CDC_DESCRIPTOR(ITF_NUM_CDC, STRID_CDC, EPNUM_CDC_NOTIF, 8, EPNUM_CDC_OUT, EPNUM_CDC_IN, 64),
+    TUD_CONFIG_DESCRIPTOR(1, 0, 0, TUD_CONFIG_DESC_LEN, 0x00, 100),
 };
 
-#if TUD_OPT_HIGH_SPEED
 // High speed configuration
 const uint8_t DESC_HS_CONFIGURATION[] = {
     TUD_CONFIG_DESCRIPTOR(1, ITF_NUM_TOTAL, 0, CONFIG_TOTAL_LEN, 0x00, 100),
     TUD_CDC_DESCRIPTOR(ITF_NUM_CDC, STRID_CDC, EPNUM_CDC_NOTIF, 16, EPNUM_CDC_OUT, EPNUM_CDC_IN, 512),
 };
 
-static_assert(sizeof(DESC_FS_CONFIGURATION) == CONFIG_TOTAL_LEN);
 static_assert(sizeof(DESC_HS_CONFIGURATION) == CONFIG_TOTAL_LEN);
 
-// Other speed configuration buffer (descriptor type differs from regular configuration)
-uint8_t descOtherSpeedConfig[CONFIG_TOTAL_LEN];
 
 // Device qualifier, required for high speed capable devices
 const tusb_desc_device_qualifier_t DESC_DEVICE_QUALIFIER = {
@@ -102,7 +103,6 @@ const tusb_desc_device_qualifier_t DESC_DEVICE_QUALIFIER = {
     .bNumConfigurations = 0x01,
     .bReserved = 0x00,
 };
-#endif
 
 //--------------------------------------------------------------------+
 // String descriptors
@@ -110,14 +110,6 @@ const tusb_desc_device_qualifier_t DESC_DEVICE_QUALIFIER = {
 
 constexpr uint16_t LANGID_EN_US = 0x0409;
 constexpr size_t MAX_STRING_CHARS = 32;
-
-constexpr std::array<std::string_view, STRID_COUNT> STRINGS = {
-    "", // 0: language id, handled separately
-    "swiszczoo",
-    "ADAT USB Interface",
-    "", // 3: serial, generated from chip UID
-    "Debug CDC",
-};
 
 uint16_t descString[MAX_STRING_CHARS + 1];
 
@@ -148,28 +140,21 @@ const uint8_t* tud_descriptor_device_cb()
     return reinterpret_cast<const uint8_t*>(&DESC_DEVICE);
 }
 
-const uint8_t* tud_descriptor_configuration_cb(uint8_t index)
+const uint8_t* tud_descriptor_configuration_cb(uint8_t)
 {
-    (void)index;
 
-#if TUD_OPT_HIGH_SPEED
     return (tud_speed_get() == TUSB_SPEED_HIGH) ? DESC_HS_CONFIGURATION : DESC_FS_CONFIGURATION;
-#else
-    return DESC_FS_CONFIGURATION;
-#endif
 }
 
-#if TUD_OPT_HIGH_SPEED
 const uint8_t* tud_descriptor_device_qualifier_cb()
 {
     return reinterpret_cast<const uint8_t*>(&DESC_DEVICE_QUALIFIER);
 }
 
-const uint8_t* tud_descriptor_other_speed_configuration_cb(uint8_t index)
+const uint8_t* tud_descriptor_other_speed_configuration_cb(uint8_t)
 {
-    (void)index;
+    static uint8_t descOtherSpeedConfig[CONFIG_TOTAL_LEN];
 
-    // Report the configuration of the speed we are NOT currently running at
     const uint8_t* source = (tud_speed_get() == TUSB_SPEED_HIGH) ? DESC_FS_CONFIGURATION : DESC_HS_CONFIGURATION;
 
     memcpy(descOtherSpeedConfig, source, CONFIG_TOTAL_LEN);
@@ -177,7 +162,6 @@ const uint8_t* tud_descriptor_other_speed_configuration_cb(uint8_t index)
 
     return descOtherSpeedConfig;
 }
-#endif
 
 const uint16_t* tud_descriptor_string_cb(uint8_t index, uint16_t langid)
 {
